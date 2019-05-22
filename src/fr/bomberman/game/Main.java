@@ -4,10 +4,12 @@ import fr.bomberman.game.entity.Entity;
 import fr.bomberman.game.entity.Player;
 import fr.bomberman.game.exception.InvalidSpriteManager;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -66,7 +68,15 @@ public class Main extends Application {
 
         Scene gameScene = new Scene(root);
 
-        stage.setScene(gameScene);
+        // Scène Acceuil
+        Group groupA = new Group();
+        Acceuil acceuil = new Acceuil(600,600, Color.WHITE,groupA,stage,gameScene);
+
+        // Scène menu pause
+        Group groupB = new Group();
+        MenuPause menuPause = new MenuPause(600,600,Color.WHITE,groupB,stage,gameScene);
+
+        stage.setScene(acceuil);
         stage.show();
     }
 
