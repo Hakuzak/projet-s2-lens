@@ -1,5 +1,7 @@
 package fr.bomberman.game;
 
+import fr.bomberman.game.Menu.Acceuil;
+import fr.bomberman.game.Menu.MenuPause;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
 import fr.bomberman.game.entity.Player;
@@ -8,6 +10,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -91,6 +94,11 @@ public class Main extends Application {
         Group groupB = new Group();
         MenuPause menuPause = new MenuPause(600,600,Color.WHITE,groupB,stage,gameScene);
 
+        gameScene.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ESCAPE) {
+                stage.setScene(menuPause);
+            }
+        });
         stage.setScene(acceuil);
         stage.show();
     }
