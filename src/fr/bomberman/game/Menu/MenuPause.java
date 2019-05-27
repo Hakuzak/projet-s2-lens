@@ -14,25 +14,35 @@ import javafx.stage.Stage;
 public class MenuPause extends Scene {
 
 
-    public MenuPause(double v, double v1, Paint paint, Group group, Stage stage, Scene scene){
+    public MenuPause(double v, double v1, Paint paint, Group group, Stage stage, Scene a, Scene j) {
         super(group, v, v1, paint);
         VBox box = new VBox();
         box.setId("box");
         box.setSpacing(60);
-        box.setPadding(new Insets(110, 200, 110, 200));
+        box.setPadding(new Insets(55, 200, 55, 200));
         Button acceuil = new Button("Acceuil");
         Button reprendre = new Button("Reprendre");
         Button option = new Button("Option");
         Button aide = new Button("Aide");
         Button quitter = new Button("Quitter");
-        box.getChildren().addAll(reprendre, quitter, option, aide);
+        box.getChildren().addAll(acceuil, reprendre, quitter, option, aide);
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
+
+
+        acceuil.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                stage.setScene(a);
+//                stage.setFullScreen(true);
+            }
+        });
 
         reprendre.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent mouseEvent) {
-                stage.setScene(scene);
+                stage.setScene(j);
+//                stage.setFullScreen(true);
             }
         });
 

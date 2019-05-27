@@ -33,6 +33,7 @@ public class Acceuil extends Scene {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 stage.setScene(scene);
+//                stage.setFullScreen(true);
             }
         });
 
