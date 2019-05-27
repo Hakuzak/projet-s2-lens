@@ -1,5 +1,6 @@
 package fr.bomberman.game.entity;
 
+import fr.bomberman.game.Board;
 import fr.bomberman.game.SpriteManager;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,6 +13,7 @@ public class Entity extends Shape {
     private int x, y;
     private double width, height;
     private static SpriteManager spriteManager;
+    private static Board board;
 
     public Entity(Image image, int x, int y) {
         this.sprite = new ImageView(image);
@@ -29,6 +31,14 @@ public class Entity extends Shape {
 
     public SpriteManager getSpriteManager() {
         return spriteManager;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public static void setBoard(Board b) {
+        board = b;
     }
 
     public ImageView getSprite() {

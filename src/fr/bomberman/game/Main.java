@@ -1,8 +1,8 @@
 package fr.bomberman.game;
 
+import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
 import fr.bomberman.game.entity.Player;
-import fr.bomberman.game.exception.InvalidSpriteManager;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -44,6 +44,11 @@ public class Main extends Application {
         spriteManager.load("block_rock2", "assets/images/blocks/block_pierre2.png");
         spriteManager.load("block_destructible", "assets/images/blocks/caisse.png");
         spriteManager.load("grass", "assets/images/blocks/herbe.png");
+
+        // Bombs
+        spriteManager.load("bomb1", "assets/images/bombs/bomb1.png");
+        spriteManager.load("bomb2", "assets/images/bombs/bomb2.png");
+        spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
     }
 
     @Override
@@ -51,15 +56,25 @@ public class Main extends Application {
         stage.setTitle("Bomberman");
         stage.setResizable(false);
         stage.setMaxWidth(1050);
-        stage.setMaxHeight(750);
+        stage.setMaxHeight(800);
 
         createUI();
         loadSprites();
 
         Entity.setSpriteManager(spriteManager);
 
-        Player player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
+        Player player = new Player(spriteManager.get("player_default"), 100, 100, "Joueur 1");
+        player.getSprite().setX(50);
+        player.getSprite().setY(50);
         player.handleEvents(canvas);
+
+        Bomb bomb = new Bomb(spriteManager.get("bomb1"), 300, 300);
+        bomb.getSprite().setX(50);
+        bomb.getSprite().setY(50);
+
+        player.setBomb(bomb);
+
+        root.getChildren().add(bomb.getSprite());
         root.getChildren().add(player.getSprite());
 
         Board.setSpriteManager(spriteManager);
