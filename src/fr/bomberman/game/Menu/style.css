@@ -1,0 +1,23 @@
+#box {
+    -fx-background-color: grey;
+}
+
+
+.button {
+    -fx-min-width: 200;
+    -fx-min-height: 50;
+    -fx-font-family: 'Herculanum';
+    -fx-border-radius: 30;
+    -fx-font-size: 20pt;
+    -fx-background-radius: 30;
+
+}
+
+
+.button:hover {
+    -fx-font-size: 21pt;
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-background-radius: 30;
+}
+
