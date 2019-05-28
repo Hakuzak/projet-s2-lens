@@ -11,11 +11,13 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 public class Acceuil extends Scene {
 
+    private static AudioClip music;
 
     public Acceuil(double v, double v1, Paint paint, Group group, Stage stage, Scene scene) {
         super(group, v, v1, paint);
@@ -34,6 +36,8 @@ public class Acceuil extends Scene {
         jouer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                if (music.isPlaying()) music.stop();
+                music = new AudioClip("game_music.mp3");
                 stage.setScene(scene);
                 stage.setFullScreen(true);
             }
@@ -52,6 +56,10 @@ public class Acceuil extends Scene {
                 Platform.exit();
             }
         });
+    }
+
+    public static void setMusic(AudioClip clip) {
+        music = clip;
     }
 
 

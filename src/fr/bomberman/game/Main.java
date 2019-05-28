@@ -12,8 +12,11 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class Main extends Application {
 
@@ -54,8 +57,17 @@ public class Main extends Application {
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
     }
 
+    public AudioClip playMusic(String p) {
+        String path = new File("assets/musics/" + p).toURI().toString();
+        AudioClip clip = new AudioClip(path);
+        return clip;
+    }
+
     @Override
     public void start(Stage stage) {
+        AudioClip music = playMusic("home_music.mp3");
+        music.play();
+
         stage.setTitle("Bomberman");
         stage.setResizable(false);
         stage.setMaxWidth(1050);
@@ -85,6 +97,7 @@ public class Main extends Application {
         // Scène Acceuil
         Group groupA = new Group();
         Acceuil acceuil = new Acceuil(600,600, Color.WHITE,groupA,stage,gameScene);
+        Acceuil.setMusic(music);
 
         // Scène menu pause
         Group groupB = new Group();
