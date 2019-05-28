@@ -1,6 +1,7 @@
 package fr.bomberman.game.Menu;
 
 
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -14,6 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class Acceuil extends Scene {
 
@@ -37,7 +40,12 @@ public class Acceuil extends Scene {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 if (music.isPlaying()) music.stop();
-                music = new AudioClip("game_music.mp3");
+
+                String path = new File("assets/musics/game_music.wav").toURI().toString();
+                music = new AudioClip(path);
+                music.play();
+                music.setCycleCount(Timeline.INDEFINITE);
+
                 stage.setScene(scene);
                 stage.setFullScreen(true);
             }
