@@ -66,14 +66,10 @@ public class Main extends Application {
 
         Entity.setSpriteManager(spriteManager);
 
-        Player player = new Player(spriteManager.get("player_default"), 100, 100, "Joueur 1");
-        player.getSprite().setX(50);
-        player.getSprite().setY(50);
+        Player player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
 
-        Bomb bomb = new Bomb(spriteManager.get("bomb1"), 300, 300);
-        bomb.getSprite().setX(50);
-        bomb.getSprite().setY(50);
+        Bomb bomb = new Bomb(spriteManager.get("bomb1"), 50, 50);
 
         player.setBomb(bomb);
 
