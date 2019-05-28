@@ -6,9 +6,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioClip;
@@ -29,7 +27,7 @@ public class Acceuil extends Scene {
         Button option = new Button("OPTION");
         Button aide = new Button("AIDE");
         Button quitter = new Button("QUITTER");
-        box.getChildren().addAll(jouer, quitter, option, aide);
+        box.getChildren().addAll(jouer, option, aide, quitter);
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
 
@@ -67,11 +65,20 @@ public class Acceuil extends Scene {
         Dialog volume = new Dialog();
         volume.getDialogPane().setMinHeight(200);
         volume.getDialogPane().setMinWidth(300);
-        Slider slider = new Slider();
         volume.setTitle("Option");
         volume.setHeaderText("Réglage du volume");
+
+        ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        ButtonType annuler = new ButtonType("ANNULER", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        Slider slider = new Slider(0, 100, 50);
+
+
         volume.getDialogPane().setContent(slider);
+        volume.getDialogPane().getButtonTypes().addAll(ok, annuler);
+        music.setVolume(slider.getValue());
         volume.showAndWait();
+
     }
 
 }

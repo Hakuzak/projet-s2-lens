@@ -65,8 +65,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        AudioClip music = playMusic("home_music.mp3");
-        music.play();
 
         stage.setTitle("Bomberman");
         stage.setResizable(false);
@@ -91,6 +89,9 @@ public class Main extends Application {
         Board.setSpriteManager(spriteManager);
         Board board = new Board();
         board.draw(gc);
+
+        AudioClip music = playMusic("home_music.mp3");
+        music.play();
 
         Scene gameScene = new Scene(root);
 
