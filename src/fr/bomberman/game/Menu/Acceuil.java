@@ -87,6 +87,7 @@ public class Acceuil extends Scene {
         music.setVolume(slider.getValue());
         volume.showAndWait();
 
+
     }
 
 }
