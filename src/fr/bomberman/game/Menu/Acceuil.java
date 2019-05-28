@@ -25,18 +25,26 @@ public class Acceuil extends Scene {
 
     public Acceuil(double v, double v1, Paint paint, Group group, Stage stage, Scene scene) {
         super(group, v, v1, paint);
+
+        // Création de la box
         VBox box = new VBox();
         box.setId("box");
         box.setSpacing(60);
         box.setPadding(new Insets(110, 200, 110, 200));
+
+        // Ajout des boutons
         Button jouer = new Button("JOUER");
         Button option = new Button("OPTION");
         Button aide = new Button("AIDE");
         Button quitter = new Button("QUITTER");
         box.getChildren().addAll(jouer, option, aide, quitter);
+
+        // Ajout du style css
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
 
+
+        // Lorsque l'on clique sur le bouton jouer
         jouer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -52,6 +60,7 @@ public class Acceuil extends Scene {
             }
         });
 
+        // Lorsque l'on clique sur le bouton option
         option.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -59,6 +68,7 @@ public class Acceuil extends Scene {
             }
         });
 
+        // Lorsque l'on clique sur le bouton quitter
         quitter.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -73,40 +83,36 @@ public class Acceuil extends Scene {
 
 
     public void option() {
+        // Création de la boite de dialogue
         Dialog volume = new Dialog();
         volume.getDialogPane().setMinHeight(200);
         volume.getDialogPane().setMinWidth(300);
         volume.setTitle("Option");
         volume.setHeaderText("Réglage du volume");
 
+        // Création des boutons
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         ButtonType annuler = new ButtonType("ANNULER", ButtonBar.ButtonData.CANCEL_CLOSE);
 
+        // Création du slider pour le volume
         int vol = (int) music.getVolume() * 100;
-        System.out.println(vol);
         Slider slider = new Slider(0, 100, vol);
         slider.setShowTickLabels(true);
 
-
+        // Ajout des différents composants dans la boite de dialogue
         volume.getDialogPane().setContent(slider);
         volume.getDialogPane().getButtonTypes().addAll(ok, annuler);
 
-
+        // Modifier volume
         slider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
                 music.setVolume(((double) newValue) / 100);
-                System.out.println(music.getVolume());
-
             }
         });
 
-//        if(vol!=slider.getValue()) {
-//            music.setVolume(slider.getValue());
-//            System.out.println(slider.getValue());
-//            System.out.println(music.getVolume());
-//        }
+        // Affichage de la boite de dialogue
         volume.showAndWait();
 
 

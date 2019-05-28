@@ -1,8 +1,10 @@
+
 #box {
     -fx-background-color: grey;
 
 }
 
+/*Modification des labels*/
 .label {
     -fx-font-size: 40pt;
     -fx-font-weight: bold;
@@ -12,9 +14,7 @@
     -fx-font-family: "Avenir Next";
 }
 
-
-
-
+/*Modification des boutons*/
 .button {
     -fx-font-family: "Avenir";
     -fx-min-width: 200;
@@ -22,10 +22,9 @@
     -fx-border-radius: 30;
     -fx-font-size: 15pt;
     -fx-background-radius: 30;
-
 }
 
-
+/*Modification bouton lorsque survolé*/
 .button:hover {
     -fx-text-fill: white;
     -fx-background-color: black;

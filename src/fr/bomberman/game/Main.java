@@ -104,13 +104,16 @@ public class Main extends Application {
 
         // Scène menu pause
         Group groupB = new Group();
-        MenuPause menuPause = new MenuPause(600, 600, Color.WHITE, groupB, stage, acceuil, gameScene);
+        MenuPause menuPause = new MenuPause(600, 600, Color.WHITE, groupB, stage, gameScene);
 
         gameScene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ESCAPE) {
                 stage.setScene(menuPause);
+
             }
         });
+
+
         stage.setScene(acceuil);
         stage.show();
     }
