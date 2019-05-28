@@ -3,6 +3,8 @@ package fr.bomberman.game.Menu;
 
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
@@ -10,7 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
@@ -18,7 +21,7 @@ import java.io.File;
 
 public class Acceuil extends Scene {
 
-    private static AudioClip music;
+    private static MediaPlayer music;
 
     public Acceuil(double v, double v1, Paint paint, Group group, Stage stage, Scene scene) {
         super(group, v, v1, paint);
@@ -37,10 +40,10 @@ public class Acceuil extends Scene {
         jouer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if (music.isPlaying()) music.stop();
 
                 String path = new File("assets/musics/game_music.wav").toURI().toString();
-                music = new AudioClip(path);
+                Media media = new Media(path);
+                music = new MediaPlayer(media);
                 music.play();
                 music.setCycleCount(Timeline.INDEFINITE);
 
@@ -64,7 +67,7 @@ public class Acceuil extends Scene {
         });
     }
 
-    public static void setMusic(AudioClip clip) {
+    public static void setMusic(MediaPlayer clip) {
         music = clip;
     }
 
@@ -79,12 +82,31 @@ public class Acceuil extends Scene {
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         ButtonType annuler = new ButtonType("ANNULER", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-        Slider slider = new Slider(0, 100, 50);
+        int vol = (int) music.getVolume() * 100;
+        System.out.println(vol);
+        Slider slider = new Slider(0, 100, vol);
+        slider.setShowTickLabels(true);
 
 
         volume.getDialogPane().setContent(slider);
         volume.getDialogPane().getButtonTypes().addAll(ok, annuler);
-        music.setVolume(slider.getValue());
+
+
+        slider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+
+                music.setVolume(((double) newValue) / 100);
+                System.out.println(music.getVolume());
+
+            }
+        });
+
+//        if(vol!=slider.getValue()) {
+//            music.setVolume(slider.getValue());
+//            System.out.println(slider.getValue());
+//            System.out.println(music.getVolume());
+//        }
         volume.showAndWait();
 
 

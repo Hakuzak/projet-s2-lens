@@ -12,7 +12,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -57,9 +58,10 @@ public class Main extends Application {
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
     }
 
-    public AudioClip playMusic(String p) {
+    public MediaPlayer playMusic(String p) {
         String path = new File("assets/musics/" + p).toURI().toString();
-        AudioClip clip = new AudioClip(path);
+        Media media = new Media((path));
+        MediaPlayer clip = new MediaPlayer(media);
         return clip;
     }
 
@@ -90,7 +92,7 @@ public class Main extends Application {
         Board board = new Board();
         board.draw(gc);
 
-        AudioClip music = playMusic("home_music.mp3");
+        MediaPlayer music = playMusic("home_music.mp3");
         music.play();
 
         Scene gameScene = new Scene(root);
