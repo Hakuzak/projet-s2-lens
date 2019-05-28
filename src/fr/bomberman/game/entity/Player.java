@@ -17,6 +17,8 @@ public class Player extends Entity {
 
     public Player(Image image, int x, int y, String name) {
         super(image, x, y);
+        this.getSprite().setX(x);
+        this.getSprite().setY(y);
         this.name = name;
         this.lifes = 3;
         this.score = 0;
@@ -32,14 +34,16 @@ public class Player extends Entity {
         // Move up
         if(e.getCode() == KeyCode.W) {
             this.getSprite().setImage(getSpriteManager().get("player_up2"));
-            if (collideY(50) || getSprite().getX() % 100 == 0) moveDown();
+            if ((!collideY(50) && getSprite().getX() % 100 == 0) || collideY(50)) {
+            }
             else moveUp();
         }
 
         // Move down
         if(e.getCode() == KeyCode.S) {
             this.getSprite().setImage(getSpriteManager().get("player_down2"));
-            if (collideY(650) || getSprite().getX() % 100 == 0) moveUp();
+            if ((!collideY(650) && getSprite().getX() % 100 == 0) || collideY(650)) {
+            }
             else moveDown();
         }
 
@@ -47,15 +51,15 @@ public class Player extends Entity {
         if(e.getCode() == KeyCode.A) {
             // TODO : Add left sprite !
 
-            if (collideX(0) || getSprite().getY() % 100 == 0) {
-                moveRight();
+            if ((!collideX(0) && getSprite().getY() % 100 == 0) || collideX(50)) {
             } else moveLeft();
         }
 
         // Move right
         if(e.getCode() == KeyCode.D) {
             this.getSprite().setImage(getSpriteManager().get("player_right2"));
-            if (collideX(650) || getSprite().getY() % 100 == 0) moveLeft();
+            if ((!collideX(650) && getSprite().getY() % 100 == 0) || collideX(650)) {
+            }
             else moveRight();
         }
 
