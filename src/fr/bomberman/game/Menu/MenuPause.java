@@ -6,8 +6,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
@@ -61,8 +61,8 @@ public class MenuPause extends Scene {
     }
 
     public void option() {
-        DialogPane volume = new DialogPane();
+        Alert volume = new Alert(Alert.AlertType.NONE);
         Slider slider = new Slider();
-        volume.getChildren().add(slider);
+        volume.getDialogPane().getChildren().add(slider);
     }
 }
