@@ -138,13 +138,10 @@ public class Player extends Entity {
     }
 
     public void explodeBomb() {
-        final Image bomb2 = getSpriteManager().get("bomb2");
-        final Image bomb3 = getSpriteManager().get("bomb3");
-
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
-                bomb.getSprite().setImage(bomb2);
+                bomb.getSprite().setImage(getSpriteManager().get("bomb2"));
 
                 try {
                     Thread.sleep(1000);
@@ -152,7 +149,7 @@ public class Player extends Entity {
                     e.printStackTrace();
                 }
 
-                bomb.getSprite().setImage(bomb3);
+                bomb.getSprite().setImage(getSpriteManager().get("bomb3"));
 
                 try {
                     Thread.sleep(1000);
@@ -161,7 +158,10 @@ public class Player extends Entity {
                 }
 
                 bomb.getSprite().setOpacity(0);
+
+                bomb.getSprite().setImage(getSpriteManager().get("bomb1"));
                 // TODO : Create explosion animation !
+
             }
         }, 1000);
     }

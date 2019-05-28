@@ -83,7 +83,6 @@ public class Acceuil extends Scene {
         ButtonType annuler = new ButtonType("ANNULER", ButtonBar.ButtonData.CANCEL_CLOSE);
 
         int vol = (int) music.getVolume() * 100;
-        System.out.println(vol);
         Slider slider = new Slider(0, 100, vol);
         slider.setShowTickLabels(true);
 
@@ -95,18 +94,10 @@ public class Acceuil extends Scene {
         slider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-
                 music.setVolume(((double) newValue) / 100);
-                System.out.println(music.getVolume());
-
             }
         });
 
-//        if(vol!=slider.getValue()) {
-//            music.setVolume(slider.getValue());
-//            System.out.println(slider.getValue());
-//            System.out.println(music.getVolume());
-//        }
         volume.showAndWait();
 
 
