@@ -3,9 +3,13 @@ package fr.bomberman.game.Menu;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
@@ -19,32 +23,34 @@ public class MenuPause extends Scene {
         VBox box = new VBox();
         box.setId("box");
         box.setSpacing(60);
-        box.setPadding(new Insets(55, 200, 55, 200));
-        Button acceuil = new Button("Acceuil");
+        Label pause = new Label("PAUSE");
+        pause.setAlignment(Pos.CENTER);
+        box.setPadding(new Insets(20, 200, 70, 200));
         Button reprendre = new Button("Reprendre");
         Button option = new Button("Option");
         Button aide = new Button("Aide");
         Button quitter = new Button("Quitter");
-        box.getChildren().addAll(acceuil, reprendre, quitter, option, aide);
+        box.getChildren().addAll(pause, reprendre, quitter, option, aide);
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
 
 
-        acceuil.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                stage.setScene(a);
-//                stage.setFullScreen(true);
-            }
-        });
 
         reprendre.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent mouseEvent) {
                 stage.setScene(j);
-//                stage.setFullScreen(true);
+                stage.setFullScreen(true);
             }
         });
+
+        option.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                option();
+            }
+        });
+
 
         quitter.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -52,5 +58,11 @@ public class MenuPause extends Scene {
                 Platform.exit();
             }
         });
+    }
+
+    public void option() {
+        DialogPane volume = new DialogPane();
+        Slider slider = new Slider();
+        volume.getChildren().add(slider);
     }
 }

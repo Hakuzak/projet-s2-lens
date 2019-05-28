@@ -21,10 +21,10 @@ public class Acceuil extends Scene {
         box.setId("box");
         box.setSpacing(60);
         box.setPadding(new Insets(110, 200, 110, 200));
-        Button jouer = new Button("Jouer");
-        Button option = new Button("Option");
-        Button aide = new Button("Aide");
-        Button quitter = new Button("Quitter");
+        Button jouer = new Button("JOUER");
+        Button option = new Button("OPTION");
+        Button aide = new Button("AIDE");
+        Button quitter = new Button("QUITTER");
         box.getChildren().addAll(jouer, quitter, option, aide);
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
@@ -33,7 +33,7 @@ public class Acceuil extends Scene {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 stage.setScene(scene);
-//                stage.setFullScreen(true);
+                stage.setFullScreen(true);
             }
         });
 
