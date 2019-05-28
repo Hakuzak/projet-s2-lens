@@ -37,6 +37,9 @@ public class Main extends Application {
     private Bomb bomb;
     private Board board;
 
+    /**
+     * Crée la base de l'interface utilisateur
+     */
     private void createUI() {
         canvas = new Canvas(750, 750);
         canvas.setFocusTraversable(true);
@@ -49,6 +52,9 @@ public class Main extends Application {
         groupB = new Group();
     }
 
+    /**
+     * Charge toutes les images dans le gestionnaire de sprites
+     */
     private void loadSprites() {
         // Player
         spriteManager.load("player_default", "assets/images/player/default.png");
@@ -72,6 +78,12 @@ public class Main extends Application {
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
     }
 
+    /**
+     * Permet de joueur de la musique
+     *
+     * @param p Le chemin de la musique à joueur
+     * @return MediaPlayer
+     */
     private MediaPlayer playMusic(String p) {
         String path = new File("assets/musics/" + p).toURI().toString();
         Media media = new Media((path));
@@ -79,6 +91,9 @@ public class Main extends Application {
         return clip;
     }
 
+    /**
+     * Crée le jeu en lui même en initialisant tous les objets essentiels
+     */
     private void createGame() {
         Entity.setSpriteManager(spriteManager);
 
@@ -97,6 +112,10 @@ public class Main extends Application {
         board.draw(gc);
     }
 
+    /**
+     * Crée les différentes scènes
+     * @param stage
+     */
     private void createMenus(Stage stage) {
         MediaPlayer music = playMusic("home_music.mp3");
         music.play();
@@ -120,6 +139,10 @@ public class Main extends Application {
         stage.setScene(acceuil);
     }
 
+    /**
+     * Méthode appelée au démarrage du jeu qui crée la fenêtre et tous ses composants
+     * @param stage Le stage principal créer par JavaFX
+     */
     @Override
     public void start(Stage stage) {
 
@@ -134,9 +157,11 @@ public class Main extends Application {
 
         createMenus(stage);
         stage.show();
+
     }
 
     public static void main(String[] args) {
         launch(args);
     }
+
 }

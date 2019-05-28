@@ -10,10 +10,19 @@ public class SpriteManager {
 
     private HashMap<String, Image> sprites;
 
+    /**
+     * Initialise le gestionnaire de sprites
+     */
     public SpriteManager() {
         this.sprites = new HashMap<>();
     }
 
+    /**
+     * Charge une image en lui assignant un nom
+     *
+     * @param name Le nom de l'image qui servira à la récupérer
+     * @param path Le chemin de l'image
+     */
     public void load(String name, String path) {
         File file = new File(path);
         if(file.exists()) {
@@ -21,6 +30,11 @@ public class SpriteManager {
         }
     }
 
+    /**
+     * Retourne l'image si elle existe, null sinon
+     * @param name Le nom de l'image
+     * @return Image
+     */
     public Image get(String name) {
         try {
             for(String s : sprites.keySet()) {

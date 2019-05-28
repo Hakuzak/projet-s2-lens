@@ -1,6 +1,5 @@
 package fr.bomberman.game.Menu;
 
-
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;

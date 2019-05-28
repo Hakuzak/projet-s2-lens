@@ -14,25 +14,44 @@ public class Board extends Pane {
     private Vector<Tile> tiles;
     private static SpriteManager spriteManager;
 
+    /**
+     * Crée un plateau de tuiles et le génère
+     */
     public Board() {
         tiles = new Vector<>();
         generate();
     }
 
+    /**
+     * Assigne le gestionnaire de sprites au plateau
+     *
+     * @param sm Le gestionnaire de sprites
+     */
     public static void setSpriteManager(SpriteManager sm) {
         spriteManager = sm;
     }
 
+    /**
+     * Ajoute une tuile
+     * @param t La tuile a ajouter
+     */
     public void add(Tile t) {
         tiles.add(t);
     }
 
+    /**
+     * Dessine le plateau à partir du context graphique
+     * @param gc Le context graphique du canvas
+     */
     public void draw(GraphicsContext gc) {
         for(Tile t : tiles) {
             gc.drawImage(t.getSprite().getImage(), t.getX(), t.getY(), t.getWidth(), t.getHeight());
         }
     }
 
+    /**
+     * Génère le plateau et le remplit de tuiles
+     */
     public void generate() {
         Image br = spriteManager.get("block_rock");
         Image br2 = spriteManager.get("block_rock2");
@@ -88,10 +107,6 @@ public class Board extends Pane {
             }
         }
 
-    }
-
-    public Vector<Tile> getTiles() {
-        return this.tiles;
     }
 
 }
