@@ -1,7 +1,6 @@
 
 #box {
-    -fx-background-color: grey;
-
+    -fx-background-color: #4b4647;
 }
 
 /*Modification des labels*/
@@ -22,12 +21,13 @@
     -fx-border-radius: 30;
     -fx-font-size: 15pt;
     -fx-background-radius: 30;
+    -fx-background-color: #0a8000;
 }
 
 /*Modification bouton lorsque survolé*/
 .button:hover {
     -fx-text-fill: white;
-    -fx-background-color: black;
+    -fx-background-color: #4b4647;
     -fx-background-radius: 30;
 }
 

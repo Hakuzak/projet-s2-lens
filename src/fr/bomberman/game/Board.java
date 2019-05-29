@@ -56,6 +56,7 @@ public class Board extends Pane {
         Image br = spriteManager.get("block_rock");
         Image br2 = spriteManager.get("block_rock2");
         Image grass = spriteManager.get("grass");
+        Image caisse = spriteManager.get("block_destructible");
 
         // First and last column
         for (int i = 0; i < Board.NB_TILES; i++) {
@@ -96,6 +97,7 @@ public class Board extends Pane {
         }
 
         // Wall block
+
         for (int i = 0; i < NB_TILES; i++) {
             if (i != 0 && i != NB_TILES - 1 && i % 2 == 0) {
                 add(new Tile(br, 100, i * 50, TileType.INTERN_WALL));
@@ -107,6 +109,59 @@ public class Board extends Pane {
             }
         }
 
+        // Desctrutible block
+        int nb = 70;
+
+        while (nb != 0) {
+            int i;
+            int j;
+            i = (int) (Math.random() * 15);
+            j = (int) (Math.random() * 15);
+
+            // Pour laisser la place autour des personnages
+            if (i == 1) {
+                if (j == 1) {
+                    j += 2;
+                }
+                if (j == 2) {
+                    j += 1;
+                }
+            }
+            if (i == 2) {
+                if (j == 1) {
+                    j += 2;
+                }
+            }
+            if (i == 13) {
+                if (j == 12) {
+                    j -= 1;
+                }
+                if (j == 13) {
+                    j -= 2;
+                }
+            }
+            if (i == 12) {
+                if (j == 13) {
+                    j -= 2;
+                }
+            }
+
+
+            int x = i * 50;
+            int y = j * 50;
+            boolean bool = false;
+            for (Tile t : tiles) {
+                if ((t.getX() == x && t.getY() == y) && t.getType() == TileType.GRASS) {
+                    bool = true;
+                    t.setType(TileType.DESTRUCTIBLE);
+                }
+            }
+            if (bool == true) {
+                add(new Tile(caisse, x, y, TileType.DESTRUCTIBLE));
+
+                nb--;
+            }
+        }
     }
 
 }

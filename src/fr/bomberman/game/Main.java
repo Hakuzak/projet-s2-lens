@@ -14,7 +14,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -123,12 +122,11 @@ public class Main extends Application {
         Scene gameScene = new Scene(root);
 
         // Scène Acceuil
-        acceuil = new Acceuil(600, 600, Color.WHITE, groupA, stage, gameScene);
+        acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
         Acceuil.setMusic(music);
 
         // Scène menu pause
-        groupB = new Group();
-        menuPause = new MenuPause(600, 600, Color.WHITE, groupB, stage, acceuil);
+        menuPause = new MenuPause(600, 600, groupB, stage, gameScene);
 
         gameScene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ESCAPE) {
@@ -149,7 +147,7 @@ public class Main extends Application {
         stage.setTitle("Bomberman");
         stage.setResizable(false);
         stage.setMaxWidth(1050);
-        stage.setMaxHeight(800);
+        stage.setMaxHeight(750);
 
         createUI();
         loadSprites();
