@@ -105,11 +105,19 @@ public class MenuPause extends Scene {
 
     public void aide() {
         Dialog aide = new Dialog();
+        aide.getDialogPane().setMinHeight(200);
+        aide.getDialogPane().setMinWidth(300);
+        aide.setTitle("Aide");
+        aide.setHeaderText("Vous pouvez retrouvez ici toutes \nles informations utiles pour jouer");
+
+        Label texte = new Label();
+        texte.setAlignment(Pos.CENTER);
+        texte.setText("Z : up \nQ : left \nS : down \nD : right \nSpace : bomb \nEchap : pause");
 
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-        ButtonType annuler = new ButtonType("ANNULER", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-        aide.getDialogPane().getButtonTypes().addAll(ok, annuler);
+        aide.getDialogPane().setContent(texte);
+        aide.getDialogPane().getButtonTypes().addAll(ok);
 
         aide.showAndWait();
 
