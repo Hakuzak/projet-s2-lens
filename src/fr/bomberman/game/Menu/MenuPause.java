@@ -1,14 +1,10 @@
 package fr.bomberman.game.Menu;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -33,35 +29,13 @@ public class MenuPause extends Scene {
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
 
+        reprendre.setOnMouseClicked(e -> stage.setScene(gameScene));
 
-        reprendre.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                stage.setScene(gameScene);
-//                stage.setFullScreen(true);
-            }
-        });
+        reglage.setOnMouseClicked(e -> option());
 
-        reglage.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                option();
-            }
-        });
+        aide.setOnMouseClicked(e -> aide());
 
-        aide.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                aide();
-            }
-        });
-
-        quitter.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                System.exit(0);
-            }
-        });
+        quitter.setOnMouseClicked(e -> System.exit(0));
 
     }
 
@@ -84,19 +58,10 @@ public class MenuPause extends Scene {
         Slider slider = new Slider(0, 100, vol);
         slider.setShowTickLabels(true);
 
-
         volume.getDialogPane().setContent(slider);
         volume.getDialogPane().getButtonTypes().addAll(ok, annuler);
 
-
-        slider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-
-                music.setVolume(((double) newValue) / 100);
-
-            }
-        });
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> music.setVolume(((double) newValue) / 100));
 
         volume.showAndWait();
 

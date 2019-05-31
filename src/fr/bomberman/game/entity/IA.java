@@ -2,7 +2,9 @@ package fr.bomberman.game.entity;
 
 import fr.bomberman.game.entity.tile.TileType;
 import javafx.scene.image.Image;
+import javafx.scene.media.AudioClip;
 
+import java.io.File;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -11,6 +13,7 @@ public class IA extends Player {
 
     Random random;
     private Bomb[] bombs;
+    private int nbPlacedBombs;
 
     /**
      * Créer une intelligence artificielle qui est contrôlée par l'ordinateur
@@ -84,14 +87,48 @@ public class IA extends Player {
      */
     private void placeBomb() {
         // TODO : Place bomb
-        explodeBomb();
+        if (nbPlacedBombs == 3) nbPlacedBombs = 0;
+
+        bombs[nbPlacedBombs].getSprite().setX(this.getSprite().getX());
+        bombs[nbPlacedBombs].getSprite().setY(this.getSprite().getY());
+        bombs[nbPlacedBombs].getSprite().setOpacity(1);
+        explodeBomb(bombs[nbPlacedBombs]);
+
+        nbPlacedBombs++;
     }
 
-    /**
-     * Gère l'explosion de la bombe ainsi que son animation et les collisions avec le joueur et elle-même
-     */
-    private void explodeBomb() {
-        // TODO : Explode bomb
+    protected void explodeBomb(Bomb b) {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+                b.getSprite().setImage(getSpriteManager().get("bomb2"));
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                b.getSprite().setImage(getSpriteManager().get("bomb3"));
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                String path = new File("assets/musics/boom.mp3").toURI().toString();
+                AudioClip music = new AudioClip(path);
+                music.play();
+
+                b.getSprite().setOpacity(0);
+
+                b.getSprite().setImage(getSpriteManager().get("bomb1"));
+                // TODO : Create explosion animation !
+
+
+            }
+        }, 1000);
     }
 
     /**
@@ -99,22 +136,27 @@ public class IA extends Player {
      */
     public void play() {
         int timeMove = getRandomNumberBetween(0, 5) * 1000;
-        int timeBomb = getRandomNumberBetween(0, 10) * 1000;
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 move();
+
+                if (nbPlacedBombs == 3) nbPlacedBombs = 0;
+
+                bombs[nbPlacedBombs].getSprite().setX(getSprite().getX());
+                bombs[nbPlacedBombs].getSprite().setY(getSprite().getY());
+                bombs[nbPlacedBombs].getSprite().setOpacity(1);
+                explodeBomb(bombs[nbPlacedBombs]);
+
+                nbPlacedBombs++;
             }
         }, 0, timeMove);
+    }
 
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                placeBomb();
-            }
-        }, 0, timeBomb);
+    public void setBombs(Bomb[] b) {
+        this.bombs = b;
     }
 
 }

@@ -5,7 +5,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.media.AudioClip;
 
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -48,7 +50,6 @@ public class Player extends Entity {
      * @param e L'évènement du clavier
      */
     private void handlePressed(KeyEvent e) {
-
         // Move up
         if(e.getCode() == KeyCode.W) {
             this.getSprite().setImage(getSpriteManager().get("player_up2"));
@@ -89,7 +90,6 @@ public class Player extends Entity {
 
             nbPlacedBombs++;
         }
-
     }
 
     /**
@@ -207,7 +207,7 @@ public class Player extends Entity {
     /**
      * Gère l'explosion d'une bombe
      */
-    public void explodeBomb(Bomb b) {
+    private void explodeBomb(Bomb b) {
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
@@ -227,10 +227,15 @@ public class Player extends Entity {
                     e.printStackTrace();
                 }
 
+                String path = new File("assets/musics/boom.mp3").toURI().toString();
+                AudioClip music = new AudioClip(path);
+                music.play();
+
                 b.getSprite().setOpacity(0);
 
                 b.getSprite().setImage(getSpriteManager().get("bomb1"));
                 // TODO : Create explosion animation !
+
 
             }
         }, 1000);

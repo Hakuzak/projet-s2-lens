@@ -11,6 +11,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -82,7 +84,7 @@ public class Main extends Application {
 
     /**
      * Permet de jouer de la musique
-     * @param p Le chemin de la musique à joueur
+     * @param p Le chemin de la musique à jouer
      * @return MediaPlayer
      */
     private MediaPlayer playMusic(String p) {
@@ -110,12 +112,28 @@ public class Main extends Application {
 
         player.setBomb(bombs);
 
+        Bomb[] iaBombs = new Bomb[3];
+        iaBombs[0] = new Bomb(spriteManager.get("bomb1"), 650, 650);
+        iaBombs[1] = new Bomb(spriteManager.get("bomb1"), 650, 650);
+        iaBombs[2] = new Bomb(spriteManager.get("bomb1"), 650, 650);
+
+        ia.setBombs(iaBombs);
+
         for (Bomb b : bombs) {
             root.getChildren().add(b.getSprite());
         }
         root.getChildren().add(player.getSprite());
         root.getChildren().add(ia.getSprite());
         ia.play();
+
+        // Quitter le jeu si le joueur a perdu toutes ses vies
+        if (player.getLifes() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.NONE, "", ButtonType.FINISH);
+            alert.setHeaderText("Oh.. Vous avez perdu toutes vos vies :(");
+            alert.setContentText("Réessayez une prochaine fois peut-être !");
+
+            alert.showAndWait();
+        }
 
         Board.setSpriteManager(spriteManager);
         board = new Board();
@@ -139,6 +157,7 @@ public class Main extends Application {
 
         // Scène menu pause
         menuPause = new MenuPause(600, 600, groupB, stage, gameScene);
+//        menuPause.setMusic(music);
 
         gameScene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ESCAPE) {
@@ -151,7 +170,7 @@ public class Main extends Application {
 
     /**
      * Méthode appelée au démarrage du jeu qui crée la fenêtre et tous ses composants
-     * @param stage Le stage principal créer par JavaFX
+     * @param stage Le stage principal crée par JavaFX
      */
     @Override
     public void start(Stage stage) {

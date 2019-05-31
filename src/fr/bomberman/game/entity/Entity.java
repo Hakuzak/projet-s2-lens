@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Shape;
 
-public class Entity extends Shape {
+public class Entity extends Shape implements IEntity {
 
     private ImageView sprite;
     private int x, y;

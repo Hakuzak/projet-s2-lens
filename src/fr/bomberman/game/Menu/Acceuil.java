@@ -1,15 +1,11 @@
 package fr.bomberman.game.Menu;
 
 import javafx.animation.Timeline;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -54,43 +50,24 @@ public class Acceuil extends Scene {
 
 
         // Lorsque l'on clique sur le bouton jouer
-        jouer.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
+        jouer.setOnMouseClicked(e -> {
+            String path = new File("assets/musics/game_music.wav").toURI().toString();
+            Media media = new Media(path);
+            music = new MediaPlayer(media);
+            music.play();
+            music.setCycleCount(Timeline.INDEFINITE);
 
-                String path = new File("assets/musics/game_music.wav").toURI().toString();
-                Media media = new Media(path);
-                music = new MediaPlayer(media);
-                music.play();
-                music.setCycleCount(Timeline.INDEFINITE);
-
-                stage.setScene(scene);
-//                stage.setFullScreen(true);
-            }
+            stage.setScene(scene);
         });
 
         // Lorsque l'on clique sur le bouton reglage
-        reglage.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                option();
-            }
-        });
+        reglage.setOnMouseClicked(e -> option());
 
-        aide.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                aide();
-            }
-        });
+        // Lorsque l'on clique sur le bouton aide
+        aide.setOnMouseClicked(e -> aide());
 
         // Lorsque l'on clique sur le bouton quitter
-        quitter.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                System.exit(0);
-            }
-        });
+        quitter.setOnMouseClicked(e -> System.exit(0));
     }
 
     public static void setMusic(MediaPlayer clip) {
@@ -98,7 +75,7 @@ public class Acceuil extends Scene {
     }
 
     /**
-     * Fonction qui va créer une boite de dialogue permettant de gérer les reglages
+     * Méthode qui va créer une boite de dialogue permettant de gérer les reglages
      */
     public void option() {
         // Création de la boite de dialogue
@@ -121,17 +98,10 @@ public class Acceuil extends Scene {
         volume.getDialogPane().getButtonTypes().addAll(ok);
 
         // Modifier volume
-        slider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-
-                music.setVolume(((double) newValue) / 100);
-            }
-        });
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> music.setVolume(((double) newValue) / 100));
 
         // Affichage de la boite de dialogue
         volume.showAndWait();
-
 
     }
 
