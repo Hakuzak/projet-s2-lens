@@ -156,12 +156,22 @@ public class Board extends Pane {
                     t.setType(TileType.DESTRUCTIBLE);
                 }
             }
-            if (bool == true) {
+            if (bool) {
                 add(new Tile(caisse, x, y, TileType.DESTRUCTIBLE));
-
                 nb--;
             }
         }
+    }
+
+    public Vector<Tile> getTiles() {
+        return tiles;
+    }
+
+    public Tile getByCoords(double x, double y) {
+        for (Tile t : tiles) {
+            if (t.getX() == x && t.getY() == y) return t;
+        }
+        return null;
     }
 
 }

@@ -1,5 +1,6 @@
 package fr.bomberman.game.entity;
 
+import fr.bomberman.game.Board;
 import fr.bomberman.game.SpriteManager;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,6 +12,7 @@ public class Entity extends Shape {
     private int x, y;
     private double width, height;
     private static SpriteManager spriteManager;
+    private static Board board;
 
     /**
      * Crée une entité en fonction de son sprite et de sa position en x et y
@@ -44,6 +46,24 @@ public class Entity extends Shape {
      */
     public static void setSpriteManager(SpriteManager sm) {
         spriteManager = sm;
+    }
+
+    /**
+     * Retourne le plateau de jeu
+     *
+     * @return Board
+     */
+    public Board getBoard() {
+        return board;
+    }
+
+    /**
+     * Assigne le plateau de jeu
+     *
+     * @param b Le gestionnaire de sprites
+     */
+    public static void setBoard(Board b) {
+        board = b;
     }
 
     /**

@@ -4,6 +4,7 @@ import fr.bomberman.game.Menu.Acceuil;
 import fr.bomberman.game.Menu.MenuPause;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
+import fr.bomberman.game.entity.IA;
 import fr.bomberman.game.entity.Player;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -33,7 +34,7 @@ public class Main extends Application {
     private MenuPause menuPause;
 
     private Player player;
-    private Bomb bomb;
+    private IA ia;
     private Board board;
 
     /**
@@ -78,8 +79,7 @@ public class Main extends Application {
     }
 
     /**
-     * Permet de joueur de la musique
-     *
+     * Permet de jouer de la musique
      * @param p Le chemin de la musique à joueur
      * @return MediaPlayer
      */
@@ -99,16 +99,26 @@ public class Main extends Application {
         player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
 
-        bomb = new Bomb(spriteManager.get("bomb1"), 50, 50);
+        ia = new IA(spriteManager.get("player_default"), 250, 250, "Ordinateur");
 
-        player.setBomb(bomb);
+        Bomb[] bombs = new Bomb[3];
+        bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);
+        bombs[1] = new Bomb(spriteManager.get("bomb1"), 50, 50);
+        bombs[2] = new Bomb(spriteManager.get("bomb1"), 50, 50);
 
-        root.getChildren().add(bomb.getSprite());
+        player.setBomb(bombs);
+
+        for (Bomb b : bombs) {
+            root.getChildren().add(b.getSprite());
+        }
         root.getChildren().add(player.getSprite());
+        root.getChildren().add(ia.getSprite());
+        ia.play();
 
         Board.setSpriteManager(spriteManager);
         board = new Board();
         board.draw(gc);
+        Entity.setBoard(board);
     }
 
     /**

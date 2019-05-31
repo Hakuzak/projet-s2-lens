@@ -1,6 +1,5 @@
 package fr.bomberman.game.Menu;
 
-import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
@@ -60,7 +59,7 @@ public class MenuPause extends Scene {
         quitter.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                Platform.exit();
+                System.exit(0);
             }
         });
 
