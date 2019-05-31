@@ -163,10 +163,13 @@ public class Board extends Pane {
         }
     }
 
-    public Vector<Tile> getTiles() {
-        return tiles;
-    }
-
+    /**
+     * Retourne la tuile correspondante aux coordonnées x et y passés en paramètres, null sinon
+     *
+     * @param x La position en x
+     * @param y La postion en y
+     * @return Tile
+     */
     public Tile getByCoords(double x, double y) {
         for (Tile t : tiles) {
             if (t.getX() == x && t.getY() == y) return t;

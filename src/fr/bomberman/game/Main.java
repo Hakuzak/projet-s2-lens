@@ -60,6 +60,8 @@ public class Main extends Application {
         spriteManager.load("player_default", "assets/images/player/default.png");
         spriteManager.load("player_down1", "assets/images/player/down1.png");
         spriteManager.load("player_down2", "assets/images/player/down2.png");
+        spriteManager.load("player_left1", "assets/images/player/left1.png");
+        spriteManager.load("player_left2", "assets/images/player/left2.png");
         spriteManager.load("player_right1", "assets/images/player/right1.png");
         spriteManager.load("player_right2", "assets/images/player/right2.png");
         spriteManager.load("player_up1", "assets/images/player/up1.png");
@@ -99,7 +101,7 @@ public class Main extends Application {
         player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
 
-        ia = new IA(spriteManager.get("player_default"), 250, 250, "Ordinateur");
+        ia = new IA(spriteManager.get("player_default"), 650, 650, "Ordinateur");
 
         Bomb[] bombs = new Bomb[3];
         bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);

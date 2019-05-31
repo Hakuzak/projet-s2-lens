@@ -66,8 +66,7 @@ public class Player extends Entity {
 
         // Move left
         if(e.getCode() == KeyCode.A) {
-            // TODO : Add left sprite !
-
+            this.getSprite().setImage(getSpriteManager().get("player_left2"));
             if ((!collideX(0) && getSprite().getY() % 100 == 0) || collideX(50) || getBoard().getByCoords(getSprite().getX() - 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveLeft();
         }
@@ -105,7 +104,7 @@ public class Player extends Entity {
             this.getSprite().setImage(getSpriteManager().get("player_down1"));
         }
         if(e.getCode() == KeyCode.A) {
-            // TODO : Add left sprite !
+            this.getSprite().setImage(getSpriteManager().get("player_left1"));
         }
         if(e.getCode() == KeyCode.D) {
             this.getSprite().setImage(getSpriteManager().get("player_right1"));
