@@ -54,14 +54,13 @@ public class Board extends Pane {
      */
     public void generate() {
         Image br = spriteManager.get("block_rock");
-        Image br2 = spriteManager.get("block_rock2");
         Image grass = spriteManager.get("grass");
         Image caisse = spriteManager.get("block_destructible");
 
         // First and last column
         for (int i = 0; i < Board.NB_TILES; i++) {
-            add(new Tile(br2, 0, i * 50, TileType.EXTERN_WALL));
-            add(new Tile(br2, 700, i * 50, TileType.EXTERN_WALL));
+            add(new Tile(br, 0, i * 50, TileType.EXTERN_WALL));
+            add(new Tile(br, 700, i * 50, TileType.EXTERN_WALL));
         }
 
         // First and last line

@@ -59,22 +59,27 @@ public class Main extends Application {
      */
     private void loadSprites() {
         // Player
-        spriteManager.load("player_default", "assets/images/player/default.png");
-        spriteManager.load("player_down1", "assets/images/player/down1.png");
-        spriteManager.load("player_down2", "assets/images/player/down2.png");
-        spriteManager.load("player_left1", "assets/images/player/left1.png");
-        spriteManager.load("player_left2", "assets/images/player/left2.png");
-        spriteManager.load("player_right1", "assets/images/player/right1.png");
-        spriteManager.load("player_right2", "assets/images/player/right2.png");
-        spriteManager.load("player_up1", "assets/images/player/up1.png");
-        spriteManager.load("player_up2", "assets/images/player/up2.png");
+        spriteManager.load("player_default", "assets/images/player/player_default.png");
+        spriteManager.load("player_down1", "assets/images/player/player_down1.png");
+        spriteManager.load("player_down2", "assets/images/player/player_down2.png");
+        spriteManager.load("player_left1", "assets/images/player/player_left1.png");
+        spriteManager.load("player_left2", "assets/images/player/player_left2.png");
+        spriteManager.load("player_right1", "assets/images/player/player_right1.png");
+        spriteManager.load("player_right2", "assets/images/player/player_right2.png");
+        spriteManager.load("player_up1", "assets/images/player/player_up1.png");
+        spriteManager.load("player_up2", "assets/images/player/player_up2.png");
 
+        // IA
+        spriteManager.load("ia_default", "assets/images/player/player_default.png");
+        spriteManager.load("ia_down2", "assets/images/player/player_down2.png");
+        spriteManager.load("ia_left2", "assets/images/player/player_left2.png");
+        spriteManager.load("ia_right2", "assets/images/player/player_right2.png");
+        spriteManager.load("ia_up2", "assets/images/player/player_up2.png");
 
         // Blocks
-        spriteManager.load("block_rock", "assets/images/blocks/block_pierre.png");
-        spriteManager.load("block_rock2", "assets/images/blocks/block_pierre2.png");
-        spriteManager.load("block_destructible", "assets/images/blocks/caisse.png");
-        spriteManager.load("grass", "assets/images/blocks/herbe.png");
+        spriteManager.load("block_rock", "assets/images/blocks/unbreak_block.png");
+        spriteManager.load("block_destructible", "assets/images/blocks/break_block.png");
+        spriteManager.load("grass", "assets/images/blocks/grass.png");
 
         // Bombs
         spriteManager.load("bomb1", "assets/images/bombs/bomb1.png");

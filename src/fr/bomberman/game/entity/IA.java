@@ -53,7 +53,7 @@ public class IA extends Player {
 
         // Move up
         if (dir == 0) {
-            this.getSprite().setImage(getSpriteManager().get("player_up2"));
+            this.getSprite().setImage(getSpriteManager().get("ia_up2"));
 
             if ((!collideY(50) && getSprite().getX() % 100 == 0) || collideY(50) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() - 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveUp();
@@ -61,14 +61,14 @@ public class IA extends Player {
 
         // Move down
         if (dir == 1) {
-            this.getSprite().setImage(getSpriteManager().get("player_down2"));
+            this.getSprite().setImage(getSpriteManager().get("ia_down2"));
             if ((!collideY(650) && getSprite().getX() % 100 == 0) || collideY(650) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() + 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveDown();
         }
 
         // Move left
         if (dir == 2) {
-            this.getSprite().setImage(getSpriteManager().get("player_left2"));
+            this.getSprite().setImage(getSpriteManager().get("ia_left2"));
 
             if ((!collideX(0) && getSprite().getY() % 100 == 0) || collideX(50) || getBoard().getByCoords(getSprite().getX() - 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveLeft();
@@ -76,7 +76,7 @@ public class IA extends Player {
 
         // Move right
         if (dir == 3) {
-            this.getSprite().setImage(getSpriteManager().get("player_right2"));
+            this.getSprite().setImage(getSpriteManager().get("ia_right2"));
             if ((!collideX(650) && getSprite().getY() % 100 == 0) || collideX(650) || getBoard().getByCoords(getSprite().getX() + 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveRight();
         }
