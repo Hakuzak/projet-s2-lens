@@ -17,7 +17,9 @@ public class Player extends Entity {
     private int lifes;
     private float score;
     private Bomb[] bombs;
-    protected int nbPlacedBombs = 1;
+    private int nbPlacedBombs;
+
+
 
     /**
      * Créer un joueur contrôlable par un humain
@@ -34,7 +36,9 @@ public class Player extends Entity {
         this.name = name;
         this.lifes = 3;
         this.score = 0;
+        nbPlacedBombs = 1;
     }
+
 
     /**
      * Gère le clavier et les actions à effectuer lorsqu'une touche est pressée ou relachée
@@ -44,6 +48,7 @@ public class Player extends Entity {
         c.setOnKeyPressed(this::handlePressed);
         c.setOnKeyReleased(this::handleReleased);
     }
+
 
     /**
      * Méthode appelée lorqu'une touche est pressée
@@ -85,6 +90,7 @@ public class Player extends Entity {
         }
     }
 
+
     /**
      * Méthode appelée lorqu'une touche est relachée
      * @param e L'évènement du clavier
@@ -104,6 +110,7 @@ public class Player extends Entity {
         }
     }
 
+
     /**
      * Retourne le nom du joueur
      * @return String
@@ -111,6 +118,7 @@ public class Player extends Entity {
     public String getName() {
         return name;
     }
+
 
     /**
      * Retourne le nombre de vies restantes
@@ -120,6 +128,7 @@ public class Player extends Entity {
         return lifes;
     }
 
+
     /**
      * Retourne le score
      * @return float
@@ -127,6 +136,7 @@ public class Player extends Entity {
     public float getScore() {
         return score;
     }
+
 
     /**
      * Modifie le score du joueur
@@ -136,12 +146,14 @@ public class Player extends Entity {
         this.score += score;
     }
 
+
     /**
      * Enlève une vie au joueur lorqu'il meurt
      */
     public void dead() {
         this.lifes--;
     }
+
 
     /**
      * Retourne true si une collision sur l'axe x est détectée, false sinon
@@ -152,6 +164,7 @@ public class Player extends Entity {
         return getSprite().getX() == nb;
     }
 
+
     /**
      * Retourne true si une collision sur l'axe y est détectée, false sinon
      * @param nb La valeur de y a tester
@@ -161,12 +174,14 @@ public class Player extends Entity {
         return getSprite().getY() == nb;
     }
 
+
     /**
      * Déplace le joueur vers le haut
      */
     protected void moveUp() {
         this.getSprite().setY(this.getSprite().getY() - 50);
     }
+
 
     /**
      * Déplace le joueur vers le bas
@@ -175,12 +190,14 @@ public class Player extends Entity {
         this.getSprite().setY(this.getSprite().getY() + 50);
     }
 
+
     /**
      * Déplace le joueur vers la gauche
      */
     protected void moveLeft() {
         this.getSprite().setX(this.getSprite().getX() - 50);
     }
+
 
     /**
      * Déplace le joueur vers la droite
@@ -189,6 +206,7 @@ public class Player extends Entity {
         this.getSprite().setX(this.getSprite().getX() + 50);
     }
 
+
     /**
      * Assigne le tableau de bombes au joueur
      * @param b Les bombes que le joueur possède
@@ -196,6 +214,7 @@ public class Player extends Entity {
     public void setBomb(Bomb[] b) {
         this.bombs = b;
     }
+
 
     /**
      * Permet de placer une bombe sur la position du joueur
@@ -210,6 +229,7 @@ public class Player extends Entity {
 
         nbPlacedBombs++;
     }
+
 
     /**
      * Gère l'explosion d'une bombe

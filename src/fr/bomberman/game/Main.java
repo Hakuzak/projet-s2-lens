@@ -86,7 +86,7 @@ public class Main extends Application {
         spriteManager.load("bomb2", "assets/images/bombs/bomb2.png");
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
         spriteManager.load("boom", "assets/images/boom/boom.png");
-        spriteManager.load("explosion", "assets/images/boom/explosion.png");
+        spriteManager.load("explosion", "assets/images/boom/fire.png");
     }
 
     /**

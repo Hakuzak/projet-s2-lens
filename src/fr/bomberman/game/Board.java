@@ -59,8 +59,8 @@ public class Board extends Pane {
 
         // First and last column
         for (int i = 0; i < Board.NB_TILES; i++) {
-            add(new Tile(br, 0, i * 50, TileType.EXTERN_WALL));
-            add(new Tile(br, 700, i * 50, TileType.EXTERN_WALL));
+            add(new Tile(br, 0, i * 50, TileType.INTERN_WALL));
+            add(new Tile(br, 700, i * 50, TileType.INTERN_WALL));
         }
 
         // First and last line
@@ -176,4 +176,7 @@ public class Board extends Pane {
         return null;
     }
 
+    public Vector<Tile> getTiles() {
+        return tiles;
+    }
 }

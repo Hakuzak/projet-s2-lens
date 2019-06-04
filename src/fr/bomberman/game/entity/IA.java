@@ -94,9 +94,9 @@ public class IA extends Player {
      * Se déplace et pose une bombe toutes les X secondes
      */
     public void play() {
-        int timeMove = (int) (Math.random() * 5) * 1000;
-        while (timeMove < 0) {
-            timeMove = (int) (Math.random() * 5) * 1000;
+        int timeMove = (int) ((Math.random() * 5) + 1) * 1000;
+        while (timeMove <= 0) {
+            timeMove = (int) ((Math.random() * 5) + 1) * 1000;
         }
 
         Timer timer = new Timer();
@@ -116,22 +116,25 @@ public class IA extends Player {
     }
 
     private void moveDir(String dir) {
-        if (dir == "up") {
+        if (dir.equals("up")) {
             this.getSprite().setImage(getSpriteManager().get("ia_up"));
 
             if ((!collideY(50) && getSprite().getX() % 100 == 0) || collideY(50) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() - 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveUp();
-        } else if (dir == "down") {
+
+        } else if (dir.equals("down")) {
             this.getSprite().setImage(getSpriteManager().get("ia_down"));
 
             if ((!collideY(650) && getSprite().getX() % 100 == 0) || collideY(650) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() + 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveDown();
-        } else if (dir == "left") {
+
+        } else if (dir.equals("left")) {
             this.getSprite().setImage(getSpriteManager().get("ia_left"));
 
             if ((!collideX(0) && getSprite().getY() % 100 == 0) || collideX(50) || getBoard().getByCoords(getSprite().getX() - 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveLeft();
-        } else if (dir == "right") {
+
+        } else if (dir.equals("right")) {
             this.getSprite().setImage(getSpriteManager().get("ia_right"));
 
             if ((!collideX(650) && getSprite().getY() % 100 == 0) || collideX(650) || getBoard().getByCoords(getSprite().getX() + 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
