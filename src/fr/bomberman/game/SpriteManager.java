@@ -10,12 +10,14 @@ public class SpriteManager {
 
     private HashMap<String, Image> sprites;
 
+
     /**
      * Initialise le gestionnaire de sprites
      */
     public SpriteManager() {
         this.sprites = new HashMap<>();
     }
+
 
     /**
      * Charge une image en lui assignant un nom
@@ -29,6 +31,7 @@ public class SpriteManager {
             sprites.put(name, new Image(file.toURI().toString()));
         }
     }
+
 
     /**
      * Retourne l'image si elle existe, null sinon

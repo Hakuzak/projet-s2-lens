@@ -14,6 +14,7 @@ public class Board extends Pane {
     private Vector<Tile> tiles;
     private static SpriteManager spriteManager;
 
+
     /**
      * Crée un plateau de tuiles et le génère
      */
@@ -21,6 +22,7 @@ public class Board extends Pane {
         tiles = new Vector<>();
         generate();
     }
+
 
     /**
      * Assigne le gestionnaire de sprites au plateau
@@ -31,6 +33,7 @@ public class Board extends Pane {
         spriteManager = sm;
     }
 
+
     /**
      * Ajoute une tuile
      * @param t La tuile a ajouter
@@ -38,6 +41,7 @@ public class Board extends Pane {
     public void add(Tile t) {
         tiles.add(t);
     }
+
 
     /**
      * Dessine le plateau à partir du context graphique
@@ -48,6 +52,7 @@ public class Board extends Pane {
             gc.drawImage(t.getSprite().getImage(), t.getX(), t.getY(), t.getWidth(), t.getHeight());
         }
     }
+
 
     /**
      * Génère le plateau et le remplit de tuiles
@@ -162,6 +167,7 @@ public class Board extends Pane {
         }
     }
 
+
     /**
      * Retourne la tuile correspondante aux coordonnées x et y passés en paramètres, null sinon
      *
@@ -176,7 +182,4 @@ public class Board extends Pane {
         return null;
     }
 
-    public Vector<Tile> getTiles() {
-        return tiles;
-    }
 }

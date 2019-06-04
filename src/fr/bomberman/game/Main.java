@@ -39,6 +39,7 @@ public class Main extends Application {
     private IA ia;
     private Board board;
 
+
     /**
      * Crée la base de l'interface utilisateur
      */
@@ -53,6 +54,7 @@ public class Main extends Application {
         groupA = new Group();
         groupB = new Group();
     }
+
 
     /**
      * Charge toutes les images dans le gestionnaire de sprites
@@ -85,9 +87,9 @@ public class Main extends Application {
         spriteManager.load("bomb1", "assets/images/bombs/bomb1.png");
         spriteManager.load("bomb2", "assets/images/bombs/bomb2.png");
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
-        spriteManager.load("boom", "assets/images/boom/boom.png");
         spriteManager.load("explosion", "assets/images/boom/fire.png");
     }
+
 
     /**
      * Permet de jouer de la musique
@@ -101,6 +103,7 @@ public class Main extends Application {
         return clip;
     }
 
+
     /**
      * Crée le jeu en lui même en initialisant tous les objets essentiels
      */
@@ -111,7 +114,7 @@ public class Main extends Application {
         player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
 
-        ia = new IA(spriteManager.get("ia_default"), 650, 650, "Ordinateur");
+        ia = new IA(spriteManager.get("ia_default"), 650, 650);
 
         Bomb[] bombs = new Bomb[3];
         bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);
@@ -150,6 +153,7 @@ public class Main extends Application {
         Entity.setBoard(board);
     }
 
+
     /**
      * Crée les différentes scènes
      * @param stage
@@ -176,6 +180,7 @@ public class Main extends Application {
 
         stage.setScene(acceuil);
     }
+
 
     /**
      * Méthode appelée au démarrage du jeu qui crée la fenêtre et tous ses composants

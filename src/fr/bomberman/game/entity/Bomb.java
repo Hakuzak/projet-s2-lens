@@ -9,11 +9,23 @@ import javafx.util.Duration;
 
 public class Bomb extends Entity {
 
+
+    /**
+     * Crée une bombe avec une image et une position x et y
+     *
+     * @param image L'image de la bombe
+     * @param x     La position en x
+     * @param y     La position en y
+     */
     public Bomb(Image image, int x, int y) {
         super(image, x, y);
         this.getSprite().setOpacity(0);
     }
 
+
+    /**
+     * Affiche l'explosion sur les tuiles qui ne sont pas un mur
+     */
     public void explosion() {
         Tile tile = getBoard().getByCoords(getSprite().getX(), getSprite().getY());
         if (tile != null) {
@@ -44,14 +56,32 @@ public class Bomb extends Entity {
         }
     }
 
+
+    /**
+     * Affiche les flammes sur le plateau
+     * @param x La position en x
+     * @param y La position en y
+     */
     private void drawExplosion(int x, int y) {
         getGraphicsContext().drawImage(getSpriteManager().get("explosion"), x, y);
     }
 
+
+    /**
+     * Affiche l'herbe avec l'explosion
+     * @param x La position en x
+     * @param y La position en y
+     */
     private void drawGrass(int x, int y) {
         getGraphicsContext().drawImage(getSpriteManager().get("grass"), x, y);
     }
 
+
+    /**
+     * Dessine l'explosion et remplace les flammes par de l'herbe avec 1 seconde
+     * @param x La position en x
+     * @param y La position en y
+     */
     private void draw(int x, int y) {
         Tile newTile = getBoard().getByCoords(x, y);
         newTile.getSprite().setImage(getSpriteManager().get("grass"));

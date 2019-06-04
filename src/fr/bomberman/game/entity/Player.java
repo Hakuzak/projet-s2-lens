@@ -5,7 +5,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.util.Timer;
@@ -16,7 +17,7 @@ public class Player extends Entity {
     private String name;
     private int lifes;
     private float score;
-    private Bomb[] bombs;
+    protected Bomb[] bombs;
     private int nbPlacedBombs;
 
 
@@ -38,6 +39,7 @@ public class Player extends Entity {
         this.score = 0;
         nbPlacedBombs = 1;
     }
+
 
 
     /**
@@ -245,7 +247,7 @@ public class Player extends Entity {
                 this.waitTime(1000);
 
                 String path = new File("assets/musics/boom.mp3").toURI().toString();
-                AudioClip music = new AudioClip(path);
+                MediaPlayer music = new MediaPlayer(new Media(path));
                 music.play();
 
                 b.getSprite().setOpacity(0);

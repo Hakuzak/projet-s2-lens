@@ -16,6 +16,7 @@ public class Entity extends Shape implements IEntity {
     protected static Board board;
     protected static GraphicsContext graphicsContext;
 
+
     /**
      * Crée une entité en fonction de son sprite et de sa position en x et y
      *
@@ -33,6 +34,7 @@ public class Entity extends Shape implements IEntity {
         this.height = image.getHeight();
     }
 
+
     /**
      * Retourne le gestionnaire de sprites
      * @return SpriteManager
@@ -40,6 +42,7 @@ public class Entity extends Shape implements IEntity {
     public SpriteManager getSpriteManager() {
         return spriteManager;
     }
+
 
     /**
      * Assigne le gestionnaire de sprites
@@ -50,6 +53,7 @@ public class Entity extends Shape implements IEntity {
         spriteManager = sm;
     }
 
+
     /**
      * Retourne le plateau de jeu
      *
@@ -58,6 +62,7 @@ public class Entity extends Shape implements IEntity {
     public Board getBoard() {
         return board;
     }
+
 
     /**
      * Assigne le plateau de jeu
@@ -68,6 +73,7 @@ public class Entity extends Shape implements IEntity {
         board = b;
     }
 
+
     /**
      * Retourne le contexte graphique
      *
@@ -76,6 +82,7 @@ public class Entity extends Shape implements IEntity {
     protected GraphicsContext getGraphicsContext() {
         return graphicsContext;
     }
+
 
     /**
      * Assigne le contexte graphique
@@ -86,6 +93,7 @@ public class Entity extends Shape implements IEntity {
         graphicsContext = gc;
     }
 
+
     /**
      * Retourne une ImageView correspondant au sprite
      * @return ImageView
@@ -93,6 +101,7 @@ public class Entity extends Shape implements IEntity {
     public ImageView getSprite() {
         return sprite;
     }
+
 
     /**
      * Retourne la position en x de l'entité
@@ -102,6 +111,7 @@ public class Entity extends Shape implements IEntity {
         return x;
     }
 
+
     /**
      * Retourne la position en y de l'entité
      * @return int
@@ -110,6 +120,7 @@ public class Entity extends Shape implements IEntity {
         return y;
     }
 
+
     /**
      * Retourne la largeur de l'entité
      * @return double
@@ -117,6 +128,7 @@ public class Entity extends Shape implements IEntity {
     public double getWidth() {
         return width;
     }
+
 
     /**
      * Retourne la hauteur de l'entité

@@ -10,7 +10,6 @@ import java.util.TimerTask;
 public class IA extends Player {
 
     Random random;
-    private Bomb[] bombs;
     private int nbPlacedBombs;
 
     /**
@@ -19,20 +18,22 @@ public class IA extends Player {
      * @param image Le sprite
      * @param x     La position en x
      * @param y     La position en y
-     * @param name  Le nom du de l'intelligence artificielle
      */
-    public IA(Image image, int x, int y, String name) {
-        super(image, x, y, name);
+    public IA(Image image, int x, int y) {
+        super(image, x, y, "Ordinateur");
         random = new Random();
     }
 
+
     /**
-     * Génération aléatoire entre un nombre minimal et maximal
-     *
-     * @param min Nombre minimal
-     * @param max Nombre maximal
-     * @return int
+     * Assigne les bombes
+     * @param b Le tableau de bombes de l'IA
      */
+    public void setBombs(Bomb[] b) {
+        bombs = b;
+    }
+
+
 
     /**
      * Génère un nombre aléatoire en 0 et 3 qui permet de déplacer aléatoirement l'IA vers une direction définie
@@ -90,31 +91,12 @@ public class IA extends Player {
 
     }
 
+
     /**
-     * Se déplace et pose une bombe toutes les X secondes
+     * Déplacement l'IA en fonction de la direction choisie
+     *
+     * @param dir La direction vers laquelle l'IA doit se diriger
      */
-    public void play() {
-        int timeMove = (int) ((Math.random() * 5) + 1) * 1000;
-        while (timeMove <= 0) {
-            timeMove = (int) ((Math.random() * 5) + 1) * 1000;
-        }
-
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                move();
-
-                if (nbPlacedBombs == 3) nbPlacedBombs = 0;
-                placeBomb();
-            }
-        }, 0, timeMove);
-    }
-
-    public void setBombs(Bomb[] b) {
-        this.bombs = b;
-    }
-
     private void moveDir(String dir) {
         if (dir.equals("up")) {
             this.getSprite().setImage(getSpriteManager().get("ia_up"));
@@ -142,14 +124,45 @@ public class IA extends Player {
         }
     }
 
+
+    /**
+     * Retourne le nombre de vies de l'IA
+     * @return int
+     */
     @Override
     public int getLifes() {
         return super.getLifes();
     }
 
+
+    /**
+     * Enlève une vie à l'IA
+     */
     @Override
     public void dead() {
         super.dead();
+    }
+
+
+    /**
+     * Se déplace et pose une bombe toutes les X secondes
+     */
+    public void play() {
+        int timeMove = (int) ((Math.random() * 5) + 1) * 1000;
+        while (timeMove <= 0) {
+            timeMove = (int) ((Math.random() * 5) + 1) * 1000;
+        }
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                move();
+
+                if (nbPlacedBombs == 3) nbPlacedBombs = 0;
+                placeBomb();
+            }
+        }, 0, timeMove);
     }
 
 }
