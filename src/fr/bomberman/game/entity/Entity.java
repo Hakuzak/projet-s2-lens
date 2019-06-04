@@ -2,6 +2,7 @@ package fr.bomberman.game.entity;
 
 import fr.bomberman.game.Board;
 import fr.bomberman.game.SpriteManager;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Shape;
@@ -12,7 +13,8 @@ public class Entity extends Shape implements IEntity {
     private int x, y;
     private double width, height;
     private static SpriteManager spriteManager;
-    private static Board board;
+    protected static Board board;
+    protected static GraphicsContext graphicsContext;
 
     /**
      * Crée une entité en fonction de son sprite et de sa position en x et y
@@ -64,6 +66,24 @@ public class Entity extends Shape implements IEntity {
      */
     public static void setBoard(Board b) {
         board = b;
+    }
+
+    /**
+     * Retourne le contexte graphique
+     *
+     * @return GraphicsContext
+     */
+    protected GraphicsContext getGraphicsContext() {
+        return graphicsContext;
+    }
+
+    /**
+     * Assigne le contexte graphique
+     *
+     * @param gc Le contexte graphique
+     */
+    public static void setGraphicsContext(GraphicsContext gc) {
+        graphicsContext = gc;
     }
 
     /**

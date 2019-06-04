@@ -17,7 +17,7 @@ public class Player extends Entity {
     private int lifes;
     private float score;
     private Bomb[] bombs;
-    private int nbPlacedBombs = 0;
+    protected int nbPlacedBombs = 1;
 
     /**
      * Créer un joueur contrôlable par un humain
@@ -81,14 +81,7 @@ public class Player extends Entity {
 
         // Place bomb
         if (e.getCode() == KeyCode.SPACE) {
-            if (nbPlacedBombs == 3) nbPlacedBombs = 0;
-
-            bombs[nbPlacedBombs].getSprite().setX(this.getSprite().getX());
-            bombs[nbPlacedBombs].getSprite().setY(this.getSprite().getY());
-            bombs[nbPlacedBombs].getSprite().setOpacity(1);
-            explodeBomb(bombs[nbPlacedBombs]);
-
-            nbPlacedBombs++;
+            placeBomb();
         }
     }
 
@@ -205,27 +198,31 @@ public class Player extends Entity {
     }
 
     /**
+     * Permet de placer une bombe sur la position du joueur
+     */
+    protected void placeBomb() {
+        if (nbPlacedBombs == 3) nbPlacedBombs = 0;
+
+        bombs[nbPlacedBombs].getSprite().setX(this.getSprite().getX());
+        bombs[nbPlacedBombs].getSprite().setY(this.getSprite().getY());
+        bombs[nbPlacedBombs].getSprite().setOpacity(1);
+        explodeBomb(bombs[nbPlacedBombs]);
+
+        nbPlacedBombs++;
+    }
+
+    /**
      * Gère l'explosion d'une bombe
      */
-    private void explodeBomb(Bomb b) {
+    protected void explodeBomb(Bomb b) {
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
                 b.getSprite().setImage(getSpriteManager().get("bomb2"));
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                this.waitTime(1000);
 
                 b.getSprite().setImage(getSpriteManager().get("bomb3"));
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                this.waitTime(1000);
 
                 String path = new File("assets/musics/boom.mp3").toURI().toString();
                 AudioClip music = new AudioClip(path);
@@ -234,11 +231,19 @@ public class Player extends Entity {
                 b.getSprite().setOpacity(0);
 
                 b.getSprite().setImage(getSpriteManager().get("bomb1"));
-                // TODO : Create explosion animation !
-
+                b.explosion();
 
             }
+
+            private void waitTime(int i) {
+                try {
+                    Thread.sleep(i);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }, 1000);
+
     }
 
 }

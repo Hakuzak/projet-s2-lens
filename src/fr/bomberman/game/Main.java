@@ -85,6 +85,8 @@ public class Main extends Application {
         spriteManager.load("bomb1", "assets/images/bombs/bomb1.png");
         spriteManager.load("bomb2", "assets/images/bombs/bomb2.png");
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
+        spriteManager.load("boom", "assets/images/boom/boom.png");
+        spriteManager.load("explosion", "assets/images/boom/explosion.png");
     }
 
     /**
@@ -104,6 +106,7 @@ public class Main extends Application {
      */
     private void createGame() {
         Entity.setSpriteManager(spriteManager);
+        Entity.setGraphicsContext(gc);
 
         player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
@@ -127,6 +130,7 @@ public class Main extends Application {
         for (Bomb b : bombs) {
             root.getChildren().add(b.getSprite());
         }
+
         root.getChildren().add(player.getSprite());
         root.getChildren().add(ia.getSprite());
         ia.play();

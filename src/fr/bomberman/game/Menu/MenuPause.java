@@ -1,10 +1,12 @@
 package fr.bomberman.game.Menu;
 
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -31,7 +33,13 @@ public class MenuPause extends Scene {
 
         reprendre.setOnMouseClicked(e -> stage.setScene(gameScene));
 
-        reglage.setOnMouseClicked(e -> option());
+        reglage.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent event) {
+                option();
+            }
+        });
 
         aide.setOnMouseClicked(e -> aide());
 
@@ -44,25 +52,29 @@ public class MenuPause extends Scene {
     }
 
     public void option() {
+        // Création de la boite de dialogue
         Dialog volume = new Dialog();
         volume.getDialogPane().setMinHeight(200);
         volume.getDialogPane().setMinWidth(300);
-        volume.setTitle("Option");
+        volume.setTitle("Réglages");
         volume.setHeaderText("Réglage du volume");
 
+        // Création des boutons
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-        ButtonType annuler = new ButtonType("ANNULER", ButtonBar.ButtonData.CANCEL_CLOSE);
 
+        // Création du slider pour le volume
         int vol = (int) music.getVolume() * 100;
-        System.out.println(vol);
         Slider slider = new Slider(0, 100, vol);
         slider.setShowTickLabels(true);
 
+        // Ajout des différents composants dans la boite de dialogue
         volume.getDialogPane().setContent(slider);
-        volume.getDialogPane().getButtonTypes().addAll(ok, annuler);
+        volume.getDialogPane().getButtonTypes().addAll(ok);
 
+        // Modifier volume
         slider.valueProperty().addListener((observable, oldValue, newValue) -> music.setVolume(((double) newValue) / 100));
 
+        // Affichage de la boite de dialogue
         volume.showAndWait();
 
     }
