@@ -158,7 +158,7 @@ public class Main extends Application {
      * Crée les différentes scènes
      * @param stage
      */
-    private void createMenus(Stage stage) {
+    private void createScenes(Stage stage) {
         MediaPlayer music = playMusic("home_music.mp3");
         music.play();
 
@@ -199,7 +199,7 @@ public class Main extends Application {
         loadSprites();
         createGame();
 
-        createMenus(stage);
+        createScenes(stage);
         stage.show();
 
     }

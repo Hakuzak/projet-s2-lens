@@ -122,7 +122,7 @@ public class Board extends Pane {
 
         // Desctrutible block
         // Nombre de bloc destructible
-        int nb = 90;
+        int nb = 110;
 
         while (nb != 0) {
             int i;
@@ -145,16 +145,16 @@ public class Board extends Pane {
                 }
             }
             // Pour laisser les cases vides autour du joueur2
-            if (i == 13) {
-                if (j == 12) {
+            if (i == 19) {
+                if (j == 10) {
                     j -= 1;
                 }
-                if (j == 13) {
+                if (j == 11) {
                     j -= 2;
                 }
             }
-            if (i == 12) {
-                if (j == 13) {
+            if (i == 18) {
+                if (j == 11) {
                     j -= 2;
                 }
             }
