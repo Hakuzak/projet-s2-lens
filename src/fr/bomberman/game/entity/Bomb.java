@@ -32,27 +32,59 @@ public class Bomb extends Entity {
             int xup = tile.getX();
             int yup = tile.getY() - 50;
 
+            int yup2 = tile.getY() - 100;
+
             int xdown = tile.getX();
             int ydown = tile.getY() + 50;
+
+            int ydown2 = tile.getY() + 100;
 
             int xleft = tile.getX() - 50;
             int yleft = tile.getY();
 
+            int xleft2 = tile.getX() - 100;
+
             int xright = tile.getX() + 50;
             int yright = tile.getY();
 
-            if (getBoard().getByCoords(xup, yup).getType() != TileType.INTERN_WALL) {
+            int xright2 = tile.getX() + 100;
+
+
+            if (getBoard().getByCoords(xup, yup) != null && getBoard().getByCoords(xup, yup).getType() != TileType.INTERN_WALL) {
+                if (getBoard().getByCoords(xup, yup2) != null && getBoard().getByCoords(xup, yup2).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xup, yup).getType() == TileType.GRASS) {
+                    draw(xup, yup2);
+                }
+                draw(tile.getX(), tile.getY());
                 draw(xup, yup);
             }
-            if (getBoard().getByCoords(xdown, ydown).getType() != TileType.INTERN_WALL) {
+
+
+            if (getBoard().getByCoords(xdown, ydown) != null && getBoard().getByCoords(xdown, ydown).getType() != TileType.INTERN_WALL) {
+                if (getBoard().getByCoords(xdown, ydown2) != null && getBoard().getByCoords(xdown, ydown2).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xdown, ydown).getType() == TileType.GRASS) {
+                    draw(xdown, ydown2);
+                }
+                draw(tile.getX(), tile.getY());
                 draw(xdown, ydown);
             }
-            if (getBoard().getByCoords(xleft, yleft).getType() != TileType.INTERN_WALL) {
+
+
+            if (getBoard().getByCoords(xleft, yleft) != null && getBoard().getByCoords(xleft, yleft).getType() != TileType.INTERN_WALL) {
+                if (getBoard().getByCoords(xleft2, yleft) != null && getBoard().getByCoords(xleft2, yleft).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xleft, yleft).getType() == TileType.GRASS) {
+                    draw(xleft2, yleft);
+                }
+                draw(tile.getX(), tile.getY());
                 draw(xleft, yleft);
             }
-            if (getBoard().getByCoords(xright, yright).getType() != TileType.INTERN_WALL) {
+
+
+            if (getBoard().getByCoords(xright, yright) != null && getBoard().getByCoords(xright, yright).getType() != TileType.INTERN_WALL) {
+                if (getBoard().getByCoords(xright2, yright) != null && getBoard().getByCoords(xright2, yright).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xright, yright).getType() == TileType.GRASS) {
+                    draw(xright2, yright);
+                }
+                draw(tile.getX(), tile.getY());
                 draw(xright, yright);
             }
+
         }
     }
 

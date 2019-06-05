@@ -170,7 +170,7 @@ public class Main extends Application {
 
         // Scène menu pause
         menuPause = new MenuPause(600, 600, groupB, stage, gameScene);
-//        menuPause.setMusic(music);
+        menuPause.setMusic(playMusic("game_music.wav"));
 
         gameScene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ESCAPE) {

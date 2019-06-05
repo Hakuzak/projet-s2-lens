@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class MenuPause extends Scene {
 
-    private static MediaPlayer music;
+    private MediaPlayer music;
 
     public MenuPause(double v, double v1, Group group, Stage stage, Scene gameScene) {
         super(group, v, v1);
@@ -47,7 +47,7 @@ public class MenuPause extends Scene {
 
     }
 
-    public static void setMusic(MediaPlayer clip) {
+    public void setMusic(MediaPlayer clip) {
         music = clip;
     }
 

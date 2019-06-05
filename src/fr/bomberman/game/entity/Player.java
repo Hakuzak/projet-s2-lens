@@ -1,16 +1,13 @@
 package fr.bomberman.game.entity;
 
 import fr.bomberman.game.entity.tile.TileType;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
-import java.util.Timer;
-import java.util.TimerTask;
+import javafx.util.Duration;
 
 public class Player extends Entity {
 
@@ -48,7 +45,6 @@ public class Player extends Entity {
      */
     public void handleEvents(Canvas c) {
         c.setOnKeyPressed(this::handlePressed);
-        c.setOnKeyReleased(this::handleReleased);
     }
 
 
@@ -59,7 +55,12 @@ public class Player extends Entity {
     private void handlePressed(KeyEvent e) {
         // Move up
         if(e.getCode() == KeyCode.W) {
-            this.getSprite().setImage(getSpriteManager().get("player_up2"));
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_up1"))),
+                    new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_up2")))
+
+            );
+            timeline.play();
 
             if ((!collideY(50) && getSprite().getX() % 100 == 0) || collideY(50) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() - 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveUp();
@@ -67,21 +68,39 @@ public class Player extends Entity {
 
         // Move down
         if(e.getCode() == KeyCode.S) {
-            this.getSprite().setImage(getSpriteManager().get("player_down2"));
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_down1"))),
+                    new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_down2")))
+
+            );
+            timeline.play();
+
             if ((!collideY(650) && getSprite().getX() % 100 == 0) || collideY(650) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() + 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveDown();
         }
 
         // Move left
         if(e.getCode() == KeyCode.A) {
-            this.getSprite().setImage(getSpriteManager().get("player_left2"));
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_left1"))),
+                    new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_left2")))
+
+            );
+            timeline.play();
+
             if ((!collideX(0) && getSprite().getY() % 100 == 0) || collideX(50) || getBoard().getByCoords(getSprite().getX() - 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveLeft();
         }
 
         // Move right
         if(e.getCode() == KeyCode.D) {
-            this.getSprite().setImage(getSpriteManager().get("player_right2"));
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_right1"))),
+                    new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_right2")))
+
+            );
+            timeline.play();
+
             if ((!collideX(650) && getSprite().getY() % 100 == 0) || collideX(650) || getBoard().getByCoords(getSprite().getX() + 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveRight();
         }
@@ -92,25 +111,6 @@ public class Player extends Entity {
         }
     }
 
-
-    /**
-     * Méthode appelée lorqu'une touche est relachée
-     * @param e L'évènement du clavier
-     */
-    private void handleReleased(KeyEvent e) {
-        if(e.getCode() == KeyCode.W) {
-            this.getSprite().setImage(getSpriteManager().get("player_up1"));
-        }
-        if(e.getCode() == KeyCode.S) {
-            this.getSprite().setImage(getSpriteManager().get("player_down1"));
-        }
-        if(e.getCode() == KeyCode.A) {
-            this.getSprite().setImage(getSpriteManager().get("player_left1"));
-        }
-        if(e.getCode() == KeyCode.D) {
-            this.getSprite().setImage(getSpriteManager().get("player_right1"));
-        }
-    }
 
 
     /**
@@ -237,35 +237,17 @@ public class Player extends Entity {
      * Gère l'explosion d'une bombe
      */
     protected void explodeBomb(Bomb b) {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            public void run() {
-                b.getSprite().setImage(getSpriteManager().get("bomb2"));
-                this.waitTime(1000);
-
-                b.getSprite().setImage(getSpriteManager().get("bomb3"));
-                this.waitTime(1000);
-
-                String path = new File("assets/musics/boom.mp3").toURI().toString();
-                MediaPlayer music = new MediaPlayer(new Media(path));
-                music.play();
-
-                b.getSprite().setOpacity(0);
-
-                b.getSprite().setImage(getSpriteManager().get("bomb1"));
-                b.explosion();
-
-            }
-
-            private void waitTime(int i) {
-                try {
-                    Thread.sleep(i);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, 1000);
-
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, event -> b.getSprite().setImage(getSpriteManager().get("bomb1"))),
+                new KeyFrame(Duration.seconds(1), event -> b.getSprite().setImage(getSpriteManager().get("bomb2"))),
+                new KeyFrame(Duration.seconds(2), event -> b.getSprite().setImage(getSpriteManager().get("bomb3"))),
+                new KeyFrame(Duration.seconds(3), event -> {
+                    b.getSprite().setOpacity(0);
+                    b.getSprite().setImage(getSpriteManager().get("bomb1"));
+                    b.explosion();
+                })
+        );
+        timeline.play();
     }
 
 }
