@@ -107,7 +107,7 @@ public class IA extends Player {
         } else if (dir.equals("down")) {
             this.getSprite().setImage(getSpriteManager().get("ia_down"));
 
-            if ((!collideY(650) && getSprite().getX() % 100 == 0) || collideY(650) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() + 50).getType() == TileType.DESTRUCTIBLE) {
+            if ((!collideY(550) && getSprite().getX() % 100 == 0) || collideY(550) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() + 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveDown();
 
         } else if (dir.equals("left")) {
@@ -119,7 +119,7 @@ public class IA extends Player {
         } else if (dir.equals("right")) {
             this.getSprite().setImage(getSpriteManager().get("ia_right"));
 
-            if ((!collideX(650) && getSprite().getY() % 100 == 0) || collideX(650) || getBoard().getByCoords(getSprite().getX() + 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
+            if ((!collideX(950) && getSprite().getY() % 100 == 0) || collideX(950) || getBoard().getByCoords(getSprite().getX() + 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveRight();
         }
     }

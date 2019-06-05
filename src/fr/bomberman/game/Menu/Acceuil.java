@@ -106,6 +106,7 @@ public class Acceuil extends Scene {
     }
 
     public void aide() {
+        // TODO : ajouter texte sur le gameplay
         Dialog aide = new Dialog();
         aide.getDialogPane().setMinHeight(200);
         aide.getDialogPane().setMinWidth(300);

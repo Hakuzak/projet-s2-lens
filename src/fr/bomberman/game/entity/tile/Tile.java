@@ -19,4 +19,6 @@ public class Tile extends Entity {
     public void setType(TileType type) {
         this.type = type;
     }
+
+
 }

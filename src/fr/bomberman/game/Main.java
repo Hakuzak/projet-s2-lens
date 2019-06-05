@@ -44,7 +44,7 @@ public class Main extends Application {
      * Crée la base de l'interface utilisateur
      */
     private void createUI() {
-        canvas = new Canvas(750, 750);
+        canvas = new Canvas(1050, 650);
         canvas.setFocusTraversable(true);
         gc = canvas.getGraphicsContext2D();
 
@@ -114,7 +114,7 @@ public class Main extends Application {
         player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
 
-        ia = new IA(spriteManager.get("ia_default"), 650, 650);
+        ia = new IA(spriteManager.get("ia_default"), 950, 550);
 
         Bomb[] bombs = new Bomb[3];
         bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);
@@ -191,8 +191,9 @@ public class Main extends Application {
 
         stage.setTitle("Bomberman");
         stage.setResizable(false);
-        stage.setMaxWidth(1050);
-        stage.setMaxHeight(750);
+        stage.setMaxWidth(1300);
+        stage.setMaxHeight(850);
+
 
         createUI();
         loadSprites();
