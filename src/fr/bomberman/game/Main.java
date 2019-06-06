@@ -1,7 +1,6 @@
 package fr.bomberman.game;
 
-import fr.bomberman.game.Menu.Accueil;
-import fr.bomberman.game.Menu.Info;
+import fr.bomberman.game.Menu.Acceuil;
 import fr.bomberman.game.Menu.MenuPause;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
@@ -16,8 +15,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -34,13 +31,8 @@ public class Main extends Application {
     private static Group groupB;
     private static Scene gameScene;
 
-<<<<<<< HEAD
     private static Acceuil acceuil;
     private static MenuPause menuPause;
-=======
-    private Accueil accueil;
-    private MenuPause menuPause;
->>>>>>> ff0e7a2d28cb649f9bfa32baabe97f9f9af4e27c
 
     private static Player player;
     private static IA ia;
@@ -161,19 +153,11 @@ public class Main extends Application {
         MediaPlayer music = playMusic("home_music.mp3");
         music.play();
 
-<<<<<<< HEAD
         gameScene = new Scene(root);
-=======
-        Scene gameScene = new Scene(root);
-        Rectangle rectangle = new Rectangle(250, 650, Color.RED);
-        rectangle.setX(1050);
-        Info info1 = new Info(player, 1100, 200);
-        root.getChildren().addAll(rectangle, info1);
->>>>>>> ff0e7a2d28cb649f9bfa32baabe97f9f9af4e27c
 
-        // Scène Accueil
-        accueil = new Accueil(600, 600, groupA, stage, gameScene);
-        Accueil.setMusic(music);
+        // Scène Acceuil
+        acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
+        Acceuil.setMusic(music);
 
         // Scène menu pause
         menuPause = new MenuPause(600, 600, groupB, stage, gameScene);
@@ -185,7 +169,7 @@ public class Main extends Application {
             }
         });
 
-        stage.setScene(accueil);
+        stage.setScene(acceuil);
     }
 
 

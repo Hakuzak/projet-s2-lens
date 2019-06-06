@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-public class Accueil extends Scene {
+public class Acceuil extends Scene {
 
     private static MediaPlayer music;
 
@@ -27,7 +27,7 @@ public class Accueil extends Scene {
      * @param scene Scene du jeu
      */
 
-    public Accueil(double v, double v1, Group group, Stage stage, Scene scene) {
+    public Acceuil(double v, double v1, Group group, Stage stage, Scene scene) {
         super(group, v, v1);
 
         // Création de la box
@@ -61,7 +61,7 @@ public class Accueil extends Scene {
         });
 
         // Lorsque l'on clique sur le bouton reglage
-        reglage.setOnMouseClicked(e -> reglage());
+        reglage.setOnMouseClicked(e -> option());
 
         // Lorsque l'on clique sur le bouton aide
         aide.setOnMouseClicked(e -> aide());
@@ -77,7 +77,7 @@ public class Accueil extends Scene {
     /**
      * Méthode qui va créer une boite de dialogue permettant de gérer les reglages
      */
-    public void reglage() {
+    public void option() {
         // Création de la boite de dialogue
         Dialog volume = new Dialog();
         volume.getDialogPane().setMinHeight(200);
