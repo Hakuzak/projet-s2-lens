@@ -1,13 +1,35 @@
 package fr.bomberman.game.entity;
 
+import fr.bomberman.game.Config;
+import fr.bomberman.game.Main;
 import fr.bomberman.game.entity.tile.TileType;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
+
+import java.io.File;
 
 public class Player extends Entity {
 
@@ -54,7 +76,11 @@ public class Player extends Entity {
      */
     private void handlePressed(KeyEvent e) {
         // Move up
+<<<<<<< HEAD
+        if(e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP) {
+=======
         if (e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP) {
+>>>>>>> ff0e7a2d28cb649f9bfa32baabe97f9f9af4e27c
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_up1"))),
                     new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_up2")))
@@ -244,9 +270,11 @@ public class Player extends Entity {
                 new KeyFrame(Duration.seconds(1), event -> b.getSprite().setImage(getSpriteManager().get("bomb2"))),
                 new KeyFrame(Duration.seconds(2), event -> b.getSprite().setImage(getSpriteManager().get("bomb3"))),
                 new KeyFrame(Duration.seconds(3), event -> {
+                    MediaPlayer media = new MediaPlayer(new Media(new File("assets/musics/boom.mp3").toURI().toString()));
+                    media.play();
                     b.getSprite().setOpacity(0);
                     b.getSprite().setImage(getSpriteManager().get("bomb1"));
-                    b.explosion();
+                    b.explosion(this);
                 })
         );
         timeline.play();
