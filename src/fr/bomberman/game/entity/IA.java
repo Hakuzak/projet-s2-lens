@@ -22,7 +22,6 @@ public class IA extends Player {
     public IA(Image image, int x, int y) {
         super(image, x, y, "Ordinateur");
         random = new Random();
-        this.lifes = 3;
     }
 
 

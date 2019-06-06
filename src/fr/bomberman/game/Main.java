@@ -1,7 +1,6 @@
 package fr.bomberman.game;
 
-import fr.bomberman.game.Menu.Accueil;
-import fr.bomberman.game.Menu.Info;
+import fr.bomberman.game.Menu.Acceuil;
 import fr.bomberman.game.Menu.MenuPause;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
@@ -35,8 +34,8 @@ public class Main extends Application {
     private Group groupA;
     private Group groupB;
 
-    private Accueil accueil;
-    private MenuPause menuPause;
+    private static Acceuil acceuil;
+    private static MenuPause menuPause;
 
     private Player player;
     private IA ia;
@@ -171,9 +170,11 @@ public class Main extends Application {
         Info info1 = new Info(player, 1100, 200);
         root.getChildren().addAll(rectangle, info1);
 
-        // Scène Accueil
-        accueil = new Accueil(600, 600, groupA, stage, gameScene);
-        Accueil.setMusic(music);
+        gameScene = new Scene(root);
+
+        // Scène Acceuil
+        acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
+        Acceuil.setMusic(music);
 
         // Scène menu pause
         menuPause = new MenuPause(600, 600, groupB, stage, gameScene);
@@ -185,7 +186,7 @@ public class Main extends Application {
             }
         });
 
-        stage.setScene(accueil);
+        stage.setScene(acceuil);
     }
 
 
