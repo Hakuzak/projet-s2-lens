@@ -167,10 +167,8 @@ public class Main extends Application {
         Scene gameScene = new Scene(root);
         Rectangle rectangle = new Rectangle(250, 650, Color.RED);
         rectangle.setX(1050);
-        Info info1 = new Info(player, 1100, 200);
-        root.getChildren().addAll(rectangle, info1);
-
-        gameScene = new Scene(root);
+//        Info info1 = new Info(player, 1100, 200);
+//        root.getChildren().addAll(rectangle, info1);
 
         // Scène Acceuil
         acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
