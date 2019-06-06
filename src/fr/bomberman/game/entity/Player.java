@@ -12,7 +12,7 @@ import javafx.util.Duration;
 public class Player extends Entity {
 
     private String name;
-    private int lifes;
+    protected int lifes;
     private float score;
     protected Bomb[] bombs;
     private int nbPlacedBombs;
@@ -54,7 +54,7 @@ public class Player extends Entity {
      */
     private void handlePressed(KeyEvent e) {
         // Move up
-        if(e.getCode() == KeyCode.W) {
+        if (e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP) {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_up1"))),
                     new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_up2")))
@@ -67,7 +67,7 @@ public class Player extends Entity {
         }
 
         // Move down
-        if(e.getCode() == KeyCode.S) {
+        if (e.getCode() == KeyCode.S || e.getCode() == KeyCode.DOWN) {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_down1"))),
                     new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_down2")))
@@ -80,7 +80,7 @@ public class Player extends Entity {
         }
 
         // Move left
-        if(e.getCode() == KeyCode.A) {
+        if (e.getCode() == KeyCode.A || e.getCode() == KeyCode.LEFT) {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_left1"))),
                     new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_left2")))
@@ -93,7 +93,7 @@ public class Player extends Entity {
         }
 
         // Move right
-        if(e.getCode() == KeyCode.D) {
+        if (e.getCode() == KeyCode.D || e.getCode() == KeyCode.RIGHT) {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO, event -> getSprite().setImage(getSpriteManager().get("player_right1"))),
                     new KeyFrame(Duration.seconds(0.1), event -> getSprite().setImage(getSpriteManager().get("player_right2")))
@@ -109,6 +109,8 @@ public class Player extends Entity {
         if (e.getCode() == KeyCode.SPACE) {
             placeBomb();
         }
+
+
     }
 
 
