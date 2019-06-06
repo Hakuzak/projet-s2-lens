@@ -244,7 +244,7 @@ public class Player extends Entity {
                 new KeyFrame(Duration.seconds(3), event -> {
                     b.getSprite().setOpacity(0);
                     b.getSprite().setImage(getSpriteManager().get("bomb1"));
-                    b.explosion();
+                    b.explosion(this);
                 })
         );
         timeline.play();
