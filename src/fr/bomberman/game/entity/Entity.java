@@ -6,7 +6,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Shape;
-import javafx.stage.Stage;
 
 public class Entity extends Shape implements IEntity {
 
@@ -16,7 +15,6 @@ public class Entity extends Shape implements IEntity {
     private static SpriteManager spriteManager;
     protected static Board board;
     protected static GraphicsContext graphicsContext;
-    protected static Stage stage;
 
 
     /**
@@ -93,17 +91,6 @@ public class Entity extends Shape implements IEntity {
      */
     public static void setGraphicsContext(GraphicsContext gc) {
         graphicsContext = gc;
-    }
-
-
-
-    /**
-     * Assigne le stage
-     *
-     * @param stg Le stage
-     */
-    public static void setStage(Stage stg) {
-        stage = stg;
     }
 
 
