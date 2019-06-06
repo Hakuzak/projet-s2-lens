@@ -1,6 +1,7 @@
 package fr.bomberman.game;
 
 import fr.bomberman.game.Menu.Acceuil;
+import fr.bomberman.game.Menu.Info;
 import fr.bomberman.game.Menu.MenuPause;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
@@ -25,27 +26,28 @@ import java.io.File;
 
 public class Main extends Application {
 
-    private Canvas canvas;
-    private GraphicsContext gc;
-    private Pane root;
+    private static Canvas canvas;
+    private static GraphicsContext gc;
+    private static Pane root;
 
-    private SpriteManager spriteManager;
+    private static SpriteManager spriteManager;
 
-    private Group groupA;
-    private Group groupB;
+    private static Group groupA;
+    private static Group groupB;
 
     private static Acceuil acceuil;
     private static MenuPause menuPause;
+    private static Scene gameScene;
 
-    private Player player;
-    private IA ia;
-    private Board board;
+    private static Player player;
+    private static IA ia;
+    private static Board board;
 
 
     /**
      * Crée la base de l'interface utilisateur
      */
-    private void createUI() {
+    private static void createUI() {
         canvas = new Canvas(1050, 650);
         canvas.setFocusTraversable(true);
         gc = canvas.getGraphicsContext2D();
@@ -61,7 +63,7 @@ public class Main extends Application {
     /**
      * Charge toutes les images dans le gestionnaire de sprites
      */
-    private void loadSprites() {
+    private static void loadSprites() {
         // Player
         spriteManager.load("player_default", "assets/images/player/player_default.png");
         spriteManager.load("player_down1", "assets/images/player/player_down1.png");
@@ -98,7 +100,7 @@ public class Main extends Application {
      * @param p Le chemin de la musique à jouer
      * @return MediaPlayer
      */
-    private MediaPlayer playMusic(String p) {
+    private static MediaPlayer playMusic(String p) {
         String path = new File("assets/musics/" + p).toURI().toString();
         Media media = new Media((path));
         MediaPlayer clip = new MediaPlayer(media);
@@ -109,9 +111,10 @@ public class Main extends Application {
     /**
      * Crée le jeu en lui même en initialisant tous les objets essentiels
      */
-    private void createGame() {
+    private static void createGame(Stage stage) {
         Entity.setSpriteManager(spriteManager);
         Entity.setGraphicsContext(gc);
+        Entity.setStage(stage);
 
         player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
         player.handleEvents(canvas);
@@ -160,17 +163,15 @@ public class Main extends Application {
      * Crée les différentes scènes
      * @param stage
      */
-    private void createScenes(Stage stage) {
+    private static void createScenes(Stage stage) {
         MediaPlayer music = playMusic("home_music.mp3");
         music.play();
 
-        Scene gameScene = new Scene(root);
+        gameScene = new Scene(root);
         Rectangle rectangle = new Rectangle(250, 650, Color.RED);
         rectangle.setX(1050);
         Info info1 = new Info(player, 1100, 200);
         root.getChildren().addAll(rectangle, info1);
-
-        gameScene = new Scene(root);
 
         // Scène Acceuil
         acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
@@ -189,6 +190,15 @@ public class Main extends Application {
         stage.setScene(acceuil);
     }
 
+    public static void resetGame(Stage stage) {
+        Main main = new Main();
+        main.start(stage);
+        stage.setScene(gameScene);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     /**
      * Méthode appelée au démarrage du jeu qui crée la fenêtre et tous ses composants
@@ -205,15 +215,11 @@ public class Main extends Application {
 
         createUI();
         loadSprites();
-        createGame();
+        createGame(stage);
 
         createScenes(stage);
         stage.show();
 
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }
