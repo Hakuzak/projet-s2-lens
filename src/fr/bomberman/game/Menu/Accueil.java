@@ -123,7 +123,6 @@ public class Accueil extends Scene {
         aide.getDialogPane().getButtonTypes().addAll(ok);
 
         aide.showAndWait();
-
     }
 
 }
