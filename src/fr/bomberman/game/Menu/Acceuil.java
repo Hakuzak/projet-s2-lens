@@ -58,6 +58,7 @@ public class Acceuil extends Scene {
             music.setCycleCount(Timeline.INDEFINITE);
 
             stage.setScene(scene);
+            Timer.timerPlay();
         });
 
         // Lorsque l'on clique sur le bouton reglage

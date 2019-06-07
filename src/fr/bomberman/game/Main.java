@@ -3,6 +3,7 @@ package fr.bomberman.game;
 import fr.bomberman.game.Menu.Acceuil;
 import fr.bomberman.game.Menu.Info;
 import fr.bomberman.game.Menu.MenuPause;
+import fr.bomberman.game.Menu.Timer;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
 import fr.bomberman.game.entity.IA;
@@ -18,11 +19,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.File;
+
+import static javafx.scene.paint.Color.rgb;
 
 public class Main extends Application {
 
@@ -168,10 +170,12 @@ public class Main extends Application {
         music.play();
 
         gameScene = new Scene(root);
-        Rectangle rectangle = new Rectangle(250, 650, Color.RED);
+        Rectangle rectangle = new Rectangle(250, 650, rgb(19, 20, 38));
         rectangle.setX(1050);
-        Info info1 = new Info(player, 1100, 200);
-        root.getChildren().addAll(rectangle, info1);
+        Info infoPl = new Info(player, 1100, 200);
+        Info infoIa = new Info(ia, 1100, 400);
+        Timer time = new Timer(1100, 100);
+        root.getChildren().addAll(rectangle, time, infoPl, infoIa);
 
         // Scène Acceuil
         acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
@@ -184,6 +188,7 @@ public class Main extends Application {
         gameScene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ESCAPE) {
                 stage.setScene(menuPause);
+                Timer.timerPause();
             }
         });
 
