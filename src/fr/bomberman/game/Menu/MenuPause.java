@@ -31,7 +31,15 @@ public class MenuPause extends Scene {
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
 
-        reprendre.setOnMouseClicked(e -> stage.setScene(gameScene));
+        reprendre.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent event) {
+                stage.setScene(gameScene);
+                Timer.timerPlay();
+
+            }
+        });
 
         reglage.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
