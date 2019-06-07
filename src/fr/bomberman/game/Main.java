@@ -44,6 +44,7 @@ public class Main extends Application {
     private static Board board;
 
 
+
     /**
      * Crée la base de l'interface utilisateur
      */
@@ -58,6 +59,7 @@ public class Main extends Application {
         groupA = new Group();
         groupB = new Group();
     }
+
 
 
     /**
@@ -91,8 +93,9 @@ public class Main extends Application {
         spriteManager.load("bomb1", "assets/images/bombs/bomb1.png");
         spriteManager.load("bomb2", "assets/images/bombs/bomb2.png");
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
-        spriteManager.load("explosion", "assets/images/boom/fire.png");
+        spriteManager.load("explosion", "assets/images/explosion/fire.png");
     }
+
 
 
     /**
@@ -115,7 +118,7 @@ public class Main extends Application {
         Entity.setGraphicsContext(gc);
         Entity.setStage(stage);
 
-        player = new Player(spriteManager.get("player_default"), 50, 50, "Joueur 1");
+        player = new Player(spriteManager.get("player_default"), 50, 50);
         player.handleEvents(canvas);
 
         ia = new IA(spriteManager.get("ia_default"), 950, 550);
@@ -189,6 +192,7 @@ public class Main extends Application {
         stage.setScene(acceuil);
     }
 
+
     /**
      * Méthode appelée au démarrage du jeu qui crée la fenêtre et tous ses composants
      * @param stage Le stage principal crée par JavaFX
@@ -210,6 +214,7 @@ public class Main extends Application {
         stage.show();
 
     }
+
 
     public static void main(String[] args) {
         launch(args);

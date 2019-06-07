@@ -13,9 +13,17 @@ import javafx.stage.Stage;
 
 public class Death extends Scene {
 
+    /**
+     * Créer le menu de mort qui propose de recommencer une partie ou non
+     *
+     * @param group      Le groupe qui contient tous les élements de la scène
+     * @param v          La largeur
+     * @param v1         La hauteur
+     * @param stage      Le stage principal pour recommencer une partie
+     * @param deadEntity Le nom de la classe de l'entité qui est mort
+     */
     public Death(Group group, double v, double v1, Stage stage, String deadEntity) {
         super(group, v, v1);
-
 
         HBox hbox = new HBox();
         hbox.setPrefSize(600, 300);
@@ -50,6 +58,5 @@ public class Death extends Scene {
         });
         no.setOnMouseClicked(e -> System.exit(0));
     }
-
 
 }

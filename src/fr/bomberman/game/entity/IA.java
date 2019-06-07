@@ -13,6 +13,7 @@ public class IA extends Player {
     private int nbPlacedBombs;
     private int lifes;
 
+
     /**
      * Créer une intelligence artificielle qui est contrôlée par l'ordinateur
      *
@@ -21,8 +22,8 @@ public class IA extends Player {
      * @param y     La position en y
      */
     public IA(Image image, int x, int y) {
-        super(image, x, y, "Ordinateur");
-        random = new Random();
+        super(image, x, y);
+        this.random = new Random();
         this.lifes = 3;
     }
 
@@ -148,8 +149,6 @@ public class IA extends Player {
      * Se déplace et pose une bombe toutes les X secondes
      */
     public void play() {
-        Random random = new Random();
-
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override

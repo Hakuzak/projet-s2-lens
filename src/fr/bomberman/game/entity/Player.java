@@ -11,7 +11,6 @@ import javafx.util.Duration;
 
 public class Player extends Entity {
 
-    private String name;
     private int lifes;
     private float score;
     protected Bomb[] bombs;
@@ -26,13 +25,11 @@ public class Player extends Entity {
      * @param image Le sprite
      * @param x     La position en x
      * @param y     La position en y
-     * @param name  Le nom du joueur
      */
-    public Player(Image image, int x, int y, String name) {
+    public Player(Image image, int x, int y) {
         super(image, x, y);
         this.getSprite().setX(x);
         this.getSprite().setY(y);
-        this.name = name;
         this.lifes = 3;
         this.score = 0;
         this.nbPlacedBombs = 1;
@@ -47,6 +44,7 @@ public class Player extends Entity {
     public void handleEvents(Canvas c) {
         c.setOnKeyPressed(this::handlePressed);
     }
+
 
 
     /**
@@ -112,58 +110,10 @@ public class Player extends Entity {
         }
     }
 
-    public void setEnnemy(Player p) {
-        ennemy = p;
-    }
-
-
-
-    /**
-     * Retourne le nom du joueur
-     * @return String
-     */
-    public String getName() {
-        return name;
-    }
-
-
-    /**
-     * Retourne le nombre de vies restantes
-     * @return int
-     */
-    public int getLifes() {
-        return lifes;
-    }
-
-
-    /**
-     * Retourne le score
-     * @return float
-     */
-    public float getScore() {
-        return score;
-    }
-
-
-    /**
-     * Modifie le score du joueur
-     * @param score La valeur du score ajouté
-     */
-    public void setScore(float score) {
-        this.score += score;
-    }
-
-
-    /**
-     * Enlève une vie au joueur lorqu'il meurt
-     */
-    public void dead() {
-        this.lifes--;
-    }
-
 
     /**
      * Retourne true si une collision sur l'axe x est détectée, false sinon
+     *
      * @param nb La valeur de x a tester
      * @return boolean
      */
@@ -174,6 +124,7 @@ public class Player extends Entity {
 
     /**
      * Retourne true si une collision sur l'axe y est détectée, false sinon
+     *
      * @param nb La valeur de y a tester
      * @return boolean
      */
@@ -215,12 +166,62 @@ public class Player extends Entity {
 
 
     /**
+     * Assigne l'ennemy que l'entité doit affronter
+     *
+     * @param p L'ennemi à tuer
+     */
+    public void setEnnemy(Player p) {
+        ennemy = p;
+    }
+
+
+
+    /**
+     * Retourne le nombre de vies restantes
+     * @return int
+     */
+    public int getLifes() {
+        return lifes;
+    }
+
+
+    /**
+     * Enlève une vie au joueur lorqu'il meurt
+     */
+    public void dead() {
+        this.lifes--;
+    }
+
+
+
+    /**
+     * Retourne le score
+     * @return float
+     */
+    public float getScore() {
+        return score;
+    }
+
+
+
+    /**
+     * Modifie le score du joueur
+     * @param score La valeur du score ajouté
+     */
+    public void setScore(float score) {
+        this.score += score;
+    }
+
+
+
+    /**
      * Assigne le tableau de bombes au joueur
      * @param b Les bombes que le joueur possède
      */
     public void setBomb(Bomb[] b) {
         this.bombs = b;
     }
+
 
 
     /**
@@ -236,6 +237,7 @@ public class Player extends Entity {
 
         nbPlacedBombs++;
     }
+
 
 
     /**
@@ -255,7 +257,4 @@ public class Player extends Entity {
         timeline.play();
     }
 
-    public void setLifes(int i) {
-        lifes = i;
-    }
 }
