@@ -15,7 +15,7 @@ public class Death extends Scene {
 
     private Stage stage;
 
-    public Death(Group group, double v, double v1, Stage stage) {
+    public Death(Group group, double v, double v1, Stage stage, String deadEntity) {
         super(group, v, v1);
 
 
@@ -27,7 +27,9 @@ public class Death extends Scene {
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(60);
 
-        Label quit = new Label("Vous avez perdu \n Voulez-vous rejouer ?");
+        String winner = deadEntity.equals("Player") ? "Vous avez perdu" : "Vous avez gagné";
+
+        Label quit = new Label(winner + " \n Voulez-vous rejouer ?");
         quit.setMinHeight(200);
         quit.setTranslateY(100);
         quit.setAlignment(Pos.CENTER);

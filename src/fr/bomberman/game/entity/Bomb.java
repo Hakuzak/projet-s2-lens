@@ -28,7 +28,7 @@ public class Bomb extends Entity {
     /**
      * Affiche l'explosion sur les tuiles qui ne sont pas un mur
      */
-    public void explosion(Player e) {
+    protected void explosion(Player e) {
         Tile tile = getBoard().getByCoords(getSprite().getX(), getSprite().getY());
         if (tile != null) {
             int xup = tile.getX();
@@ -97,9 +97,8 @@ public class Bomb extends Entity {
 
             if (e.getSprite().getX() == tile.getX() && e.getSprite().getY() == tile.getY()) e.dead();
 
-
-            if (e.getLifes() <= 0 && e.getClass().getName().equals("fr.bomberman.game.entity.Player"))
-                stage.setScene(new Death(new Group(), 600, 600, stage));
+            if (e.getLifes() <= 0)
+                stage.setScene(new Death(new Group(), 600, 600, stage, e.getClass().getSimpleName()));
 
         }
     }
