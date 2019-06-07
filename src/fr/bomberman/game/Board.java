@@ -65,14 +65,14 @@ public class Board extends Pane {
 
         // First and last column
         for (int i = 0; i < Board.NB_LINE; i++) {
-            add(new Tile(br, 0, i * 50, TileType.INTERN_WALL));
-            add(new Tile(br, 1000, i * 50, TileType.INTERN_WALL));
+            add(new Tile(br, 0, i * 50, TileType.WALL));
+            add(new Tile(br, 1000, i * 50, TileType.WALL));
         }
 
         // First and last line
         for (int i = 0; i < Board.NB_COLUMN; i++) {
-            add(new Tile(br, i * 50, 0, TileType.INTERN_WALL));
-            add(new Tile(br, i * 50, 600, TileType.INTERN_WALL));
+            add(new Tile(br, i * 50, 0, TileType.WALL));
+            add(new Tile(br, i * 50, 600, TileType.WALL));
         }
 
         // Dirt column
@@ -107,15 +107,15 @@ public class Board extends Pane {
         // Wall block
         for (int i = 0; i < NB_COLUMN; i++) {
             if (i != 0 && i != NB_COLUMN - 1 && i % 2 == 0) {
-                add(new Tile(br, 100, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 200, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 300, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 400, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 500, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 600, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 700, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 800, i * 50, TileType.INTERN_WALL));
-                add(new Tile(br, 900, i * 50, TileType.INTERN_WALL));
+                add(new Tile(br, 100, i * 50, TileType.WALL));
+                add(new Tile(br, 200, i * 50, TileType.WALL));
+                add(new Tile(br, 300, i * 50, TileType.WALL));
+                add(new Tile(br, 400, i * 50, TileType.WALL));
+                add(new Tile(br, 500, i * 50, TileType.WALL));
+                add(new Tile(br, 600, i * 50, TileType.WALL));
+                add(new Tile(br, 700, i * 50, TileType.WALL));
+                add(new Tile(br, 800, i * 50, TileType.WALL));
+                add(new Tile(br, 900, i * 50, TileType.WALL));
             }
         }
 

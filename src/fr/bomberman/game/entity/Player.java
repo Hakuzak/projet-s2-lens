@@ -18,7 +18,6 @@ public class Player extends Entity {
     protected Player ennemy;
 
 
-
     /**
      * Créer un joueur contrôlable par un humain
      *
@@ -36,7 +35,6 @@ public class Player extends Entity {
     }
 
 
-
     /**
      * Gère le clavier et les actions à effectuer lorsqu'une touche est pressée ou relachée
      * @param c Le canvas qui permet de dessiner
@@ -44,7 +42,6 @@ public class Player extends Entity {
     public void handleEvents(Canvas c) {
         c.setOnKeyPressed(this::handlePressed);
     }
-
 
 
     /**
@@ -175,7 +172,6 @@ public class Player extends Entity {
     }
 
 
-
     /**
      * Retourne le nombre de vies restantes
      * @return int
@@ -193,7 +189,6 @@ public class Player extends Entity {
     }
 
 
-
     /**
      * Retourne le score
      * @return float
@@ -201,7 +196,6 @@ public class Player extends Entity {
     public float getScore() {
         return score;
     }
-
 
 
     /**
@@ -213,7 +207,6 @@ public class Player extends Entity {
     }
 
 
-
     /**
      * Assigne le tableau de bombes au joueur
      * @param b Les bombes que le joueur possède
@@ -221,7 +214,6 @@ public class Player extends Entity {
     public void setBomb(Bomb[] b) {
         this.bombs = b;
     }
-
 
 
     /**
@@ -237,7 +229,6 @@ public class Player extends Entity {
 
         nbPlacedBombs++;
     }
-
 
 
     /**

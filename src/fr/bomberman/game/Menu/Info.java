@@ -10,11 +10,7 @@ import javafx.util.Duration;
 public class Info extends VBox {
 
     protected Player player;
-    protected int x;
-    protected int y;
-    protected String nbVie;
     protected Label vie;
-    protected int i = 0;
 
 
     /**
@@ -35,6 +31,8 @@ public class Info extends VBox {
         vie.setTranslateX(x);
         vie.setTranslateY(y);
 
+        vie.setText(Integer.toString(player.getLifes()));
+
         this.getChildren().addAll(vie);
         modifLife();
     }
@@ -46,7 +44,7 @@ public class Info extends VBox {
     public void modifLife() {
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.seconds(1),
-                e -> vie.setText("Vie : " + nbVie)
+                e -> vie.setText("Vie : " + player.getLifes())
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();

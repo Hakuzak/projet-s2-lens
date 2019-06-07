@@ -44,7 +44,6 @@ public class Main extends Application {
     private static Board board;
 
 
-
     /**
      * Crée la base de l'interface utilisateur
      */
@@ -59,7 +58,6 @@ public class Main extends Application {
         groupA = new Group();
         groupB = new Group();
     }
-
 
 
     /**
@@ -95,7 +93,6 @@ public class Main extends Application {
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
         spriteManager.load("explosion", "assets/images/explosion/fire.png");
     }
-
 
 
     /**
@@ -214,7 +211,6 @@ public class Main extends Application {
         stage.show();
 
     }
-
 
     public static void main(String[] args) {
         launch(args);
