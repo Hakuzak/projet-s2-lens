@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 
 public class Death extends Scene {
 
-    private Stage stage;
-
     public Death(Group group, double v, double v1, Stage stage, String deadEntity) {
         super(group, v, v1);
 
@@ -46,7 +44,10 @@ public class Death extends Scene {
 
         group.getChildren().add(vbox);
 
-        yes.setOnMouseClicked(e -> Main.resetGame(stage));
+        yes.setOnMouseClicked(e -> {
+            Main main = new Main();
+            main.start(stage);
+        });
         no.setOnMouseClicked(e -> System.exit(0));
     }
 

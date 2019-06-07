@@ -9,8 +9,9 @@ import java.util.TimerTask;
 
 public class IA extends Player {
 
-    Random random;
+    private Random random;
     private int nbPlacedBombs;
+    private int lifes;
 
     /**
      * Créer une intelligence artificielle qui est contrôlée par l'ordinateur
@@ -22,6 +23,7 @@ public class IA extends Player {
     public IA(Image image, int x, int y) {
         super(image, x, y, "Ordinateur");
         random = new Random();
+        this.lifes = 3;
     }
 
 
@@ -129,18 +131,16 @@ public class IA extends Player {
      * Retourne le nombre de vies de l'IA
      * @return int
      */
-    @Override
     public int getLifes() {
-        return super.getLifes();
+        return lifes;
     }
 
 
     /**
      * Enlève une vie à l'IA
      */
-    @Override
     public void dead() {
-        super.dead();
+        this.lifes--;
     }
 
 
@@ -148,10 +148,7 @@ public class IA extends Player {
      * Se déplace et pose une bombe toutes les X secondes
      */
     public void play() {
-        int timeMove = (int) ((Math.random() * 5) + 1) * 1000;
-        while (timeMove <= 0) {
-            timeMove = (int) ((Math.random() * 5) + 1) * 1000;
-        }
+        Random random = new Random();
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -161,8 +158,10 @@ public class IA extends Player {
 
                 if (nbPlacedBombs == 3) nbPlacedBombs = 0;
                 placeBomb();
+                move();
             }
-        }, 0, timeMove);
+        }, 0, random.nextInt(3) + 3);
+
     }
 
 }

@@ -13,8 +13,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -105,8 +103,7 @@ public class Main extends Application {
     private static MediaPlayer playMusic(String p) {
         String path = new File("assets/musics/" + p).toURI().toString();
         Media media = new Media((path));
-        MediaPlayer clip = new MediaPlayer(media);
-        return clip;
+        return new MediaPlayer(media);
     }
 
 
@@ -137,22 +134,19 @@ public class Main extends Application {
 
         ia.setBombs(iaBombs);
 
+        player.setEnnemy(ia);
+        ia.setEnnemy(player);
+
         for (Bomb b : bombs) {
+            root.getChildren().add(b.getSprite());
+        }
+        for (Bomb b : iaBombs) {
             root.getChildren().add(b.getSprite());
         }
 
         root.getChildren().add(player.getSprite());
         root.getChildren().add(ia.getSprite());
         ia.play();
-
-        // Quitter le jeu si le joueur a perdu toutes ses vies
-        if (player.getLifes() <= 0) {
-            Alert alert = new Alert(Alert.AlertType.NONE, "", ButtonType.FINISH);
-            alert.setHeaderText("Oh.. Vous avez perdu toutes vos vies :(");
-            alert.setContentText("Réessayez une prochaine fois peut-être !");
-
-            alert.showAndWait();
-        }
 
         Board.setSpriteManager(spriteManager);
         board = new Board();
@@ -163,7 +157,7 @@ public class Main extends Application {
 
     /**
      * Crée les différentes scènes
-     * @param stage
+     * @param stage Le stage principal
      */
     private static void createScenes(Stage stage) {
         MediaPlayer music = playMusic("home_music.mp3");
@@ -195,16 +189,6 @@ public class Main extends Application {
         stage.setScene(acceuil);
     }
 
-    public static void resetGame(Stage stage) {
-        Main main = new Main();
-        main.start(stage);
-        stage.setScene(gameScene);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     /**
      * Méthode appelée au démarrage du jeu qui crée la fenêtre et tous ses composants
      * @param stage Le stage principal crée par JavaFX
@@ -225,6 +209,10 @@ public class Main extends Application {
         createScenes(stage);
         stage.show();
 
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 
 }

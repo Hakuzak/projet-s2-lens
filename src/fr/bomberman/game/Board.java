@@ -121,7 +121,7 @@ public class Board extends Pane {
 
         // Desctrutible block
         // Nombre de bloc destructible
-        int nb = 110;
+        int nb = 10;
 
         while (nb != 0) {
             int i = (int) (Math.random() * 20);

@@ -16,6 +16,7 @@ public class Player extends Entity {
     private float score;
     protected Bomb[] bombs;
     private int nbPlacedBombs;
+    protected Player ennemy;
 
 
 
@@ -34,7 +35,7 @@ public class Player extends Entity {
         this.name = name;
         this.lifes = 3;
         this.score = 0;
-        nbPlacedBombs = 1;
+        this.nbPlacedBombs = 1;
     }
 
 
@@ -109,6 +110,10 @@ public class Player extends Entity {
         if (e.getCode() == KeyCode.SPACE) {
             placeBomb();
         }
+    }
+
+    public void setEnnemy(Player p) {
+        ennemy = p;
     }
 
 
@@ -244,10 +249,13 @@ public class Player extends Entity {
                 new KeyFrame(Duration.seconds(3), event -> {
                     b.getSprite().setOpacity(0);
                     b.getSprite().setImage(getSpriteManager().get("bomb1"));
-                    b.explosion(this);
+                    b.explosion(this, ennemy);
                 })
         );
         timeline.play();
     }
 
+    public void setLifes(int i) {
+        lifes = i;
+    }
 }
