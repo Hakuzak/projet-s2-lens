@@ -2,32 +2,30 @@
     -fx-background-color: rgb(19, 20, 38);
 }
 
+.label, .button {
+    -fx-min-width: 200;
+    -fx-min-height: 50;
+    -fx-text-fill: #fff;
+}
+
 /*Modification des labels*/
 .label {
     -fx-font-size: 40pt;
     -fx-font-weight: bold;
-    -fx-min-width: 200;
-    -fx-min-height: 50;
-    -fx-text-fill: white;
     -fx-font-family: "Avenir Next";
 }
 
 /*Modification des boutons*/
 .button {
     -fx-font-family: "Avenir";
-    -fx-min-width: 200;
-    -fx-min-height: 50;
     -fx-border-radius: 30;
     -fx-font-size: 15pt;
     -fx-background-radius: 30;
     -fx-background-color: rgb(155, 132, 145);
-    -fx-text-fill: #fff;
 }
 
 /*Modification bouton lorsque survolé*/
 .button:hover {
-    -fx-text-fill: white;
     -fx-background-color: rgb(107, 127, 142);
-    -fx-background-radius: 30;
 }
 
