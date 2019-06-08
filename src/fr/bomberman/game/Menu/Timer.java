@@ -1,17 +1,22 @@
 package fr.bomberman.game.Menu;
 
+import fr.bomberman.game.entity.Player;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
 
 public class Timer extends VBox {
 
-    protected static int min;
-    protected static int sec;
+    protected static int minutes;
+    protected static int secondes;
     protected static Timeline timeline;
     protected Label timer;
+    protected Stage stage;
 
 
     /**
@@ -20,9 +25,9 @@ public class Timer extends VBox {
      * @param x La position en x pour l'affichage
      * @param y La position en y pour l'affichage
      */
-    public Timer(int x, int y) {
-        min = 5;
-        sec = 0;
+    public Timer(int x, int y, Stage stage, Player player, Player enemy) {
+        minutes = 0;
+        secondes = 10;
 
         timer = new Label();
         timer.setId("timer");
@@ -31,7 +36,7 @@ public class Timer extends VBox {
         timer.setTranslateX(x);
         timer.setTranslateY(y);
 
-        timer.setText(min + ":" + sec);
+        timer.setText(minutes + ":" + secondes);
 
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
@@ -41,18 +46,26 @@ public class Timer extends VBox {
         timeline = new Timeline(new KeyFrame(
                 Duration.seconds(1),
                 event -> {
-                    if (sec == 0) {
-                        min--;
-                        sec = 60;
+                    if (secondes == 0) {
+                        minutes--;
+                        secondes = 60;
                     }
 
-                    sec--;
-                    timer.setText(min + ":" + sec);
+                    secondes--;
+                    timer.setText(minutes + ":" + secondes);
                 }
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
-    }
 
+        if (minutes == 0 && secondes == 0) {
+            if (player.getLifes() > enemy.getLifes()) {
+                stage.setScene(new Death(new Group(), 600, 600, stage, player.getClass().getSimpleName()));
+            } else {
+                stage.setScene(new Death(new Group(), 600, 600, stage, enemy.getClass().getSimpleName()));
+            }
+        }
+
+    }
 
     /**
      * Met le timer en pause
@@ -61,7 +74,6 @@ public class Timer extends VBox {
         timeline.pause();
     }
 
-
     /**
      * Redémarre le timer
      */
@@ -69,4 +81,21 @@ public class Timer extends VBox {
         timeline.play();
     }
 
+    /**
+     * Retourne le nombre de minutes
+     *
+     * @return int
+     */
+    public static int getMinutes() {
+        return minutes;
+    }
+
+    /**
+     * Retourne le nombre de secondes
+     *
+     * @return int
+     */
+    public static int getSecondes() {
+        return secondes;
+    }
 }

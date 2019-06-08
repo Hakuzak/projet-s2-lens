@@ -187,7 +187,7 @@ public class Main extends Application {
         rectangle.setX(1050);
         Info infoPl = new Info(player, 1075, 225);
         Info infoIa = new Info(ia, 1075, 475);
-        Timer time = new Timer(1075, 75);
+        Timer time = new Timer(1075, 75, stage, player, ia);
         ButtonPause buttonPause = new ButtonPause(stage, menuPause);
         root.getChildren().addAll(rectangle, time, infoPl, infoIa, buttonPause);
 
