@@ -115,10 +115,10 @@ public class Main extends Application {
         Entity.setGraphicsContext(gc);
         Entity.setStage(stage);
 
-        player = new Player(spriteManager.get("player_default"), 50, 50);
+        player = new Player("Joueur", spriteManager.get("player_default"), 50, 50);
         player.handleEvents(canvas);
 
-        ia = new IA(spriteManager.get("ia_default"), 950, 550);
+        ia = new IA("IA", spriteManager.get("ia_default"), 950, 550);
 
         Bomb[] bombs = new Bomb[3];
         bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);
@@ -166,9 +166,9 @@ public class Main extends Application {
         gameScene = new Scene(root);
         Rectangle rectangle = new Rectangle(250, 650, rgb(19, 20, 38));
         rectangle.setX(1050);
-        Info infoPl = new Info(player, 1075, 250);
-        Info infoIa = new Info(ia, 1075, 400);
-        Timer time = new Timer(1075, 100);
+        Info infoPl = new Info(player, 1075, 200);
+        Info infoIa = new Info(ia, 1075, 450);
+        Timer time = new Timer(1075, 50);
         root.getChildren().addAll(rectangle, time, infoPl, infoIa);
 
         // Scène Acceuil

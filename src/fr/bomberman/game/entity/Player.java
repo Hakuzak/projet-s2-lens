@@ -11,8 +11,8 @@ import javafx.util.Duration;
 
 public class Player extends Entity {
 
+    private String nom;
     private int lifes;
-    private float score;
     protected Bomb[] bombs;
     private int nbPlacedBombs;
     protected Player ennemy;
@@ -25,12 +25,12 @@ public class Player extends Entity {
      * @param x     La position en x
      * @param y     La position en y
      */
-    public Player(Image image, int x, int y) {
+    public Player(String nom, Image image, int x, int y) {
         super(image, x, y);
+        this.nom = nom;
         this.getSprite().setX(x);
         this.getSprite().setY(y);
         this.lifes = 3;
-        this.score = 0;
         this.nbPlacedBombs = 1;
     }
 
@@ -188,22 +188,12 @@ public class Player extends Entity {
         this.lifes--;
     }
 
-
     /**
-     * Retourne le score
-     * @return float
+     * Retourne le nom du joueur
+     * @return String
      */
-    public float getScore() {
-        return score;
-    }
-
-
-    /**
-     * Modifie le score du joueur
-     * @param score La valeur du score ajouté
-     */
-    public void setScore(float score) {
-        this.score += score;
+    public String getNom() {
+        return this.nom;
     }
 
 

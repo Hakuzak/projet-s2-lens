@@ -21,8 +21,8 @@ public class IA extends Player {
      * @param x     La position en x
      * @param y     La position en y
      */
-    public IA(Image image, int x, int y) {
-        super(image, x, y);
+    public IA(String nom, Image image, int x, int y) {
+        super(nom, image, x, y);
         this.random = new Random();
         this.lifes = 3;
     }

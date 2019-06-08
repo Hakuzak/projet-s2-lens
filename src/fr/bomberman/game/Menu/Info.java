@@ -12,6 +12,7 @@ public class Info extends VBox {
     protected Player player;
     protected String nbVie;
     protected Label vie;
+    protected Label joueur;
 
     /**
      * Crée un rectangle qui affiche le nombre de vies restantes du joueur
@@ -23,15 +24,21 @@ public class Info extends VBox {
     public Info(Player player, int x, int y) {
         this.player = player;
 
+        joueur = new Label();
+        joueur.setText(player.getNom());
+        joueur.setId("info");
+        joueur.setTranslateX(x);
+        joueur.setTranslateY(y);
+
         vie = new Label();
         vie.setId("info");
         vie.setTranslateX(x);
-        vie.setTranslateY(y);
+        vie.setTranslateY(y + 25);
 
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
 
-        this.getChildren().addAll(vie);
+        this.getChildren().addAll(joueur, vie);
         modifLife();
     }
 
