@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
-public class Entity extends Shape implements IEntity {
+public class Entity extends Shape {
 
     private ImageView sprite;
     private int x, y;
@@ -104,7 +104,6 @@ public class Entity extends Shape implements IEntity {
     public static void setStage(Stage stg) {
         stage = stg;
     }
-
 
 
     /**

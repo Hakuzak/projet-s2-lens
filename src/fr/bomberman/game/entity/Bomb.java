@@ -11,7 +11,6 @@ import javafx.util.Duration;
 
 public class Bomb extends Entity {
 
-
     /**
      * Crée une bombe avec une image et une position x et y
      *
@@ -28,7 +27,7 @@ public class Bomb extends Entity {
     /**
      * Affiche l'explosion sur les tuiles qui ne sont pas un mur
      */
-    public void explosion(Player e) {
+    protected void explosion(Player e, Player ennemy) {
         Tile tile = getBoard().getByCoords(getSprite().getX(), getSprite().getY());
         if (tile != null) {
             int xup = tile.getX();
@@ -52,54 +51,156 @@ public class Bomb extends Entity {
             int xright2 = tile.getX() + 100;
 
 
-            if (getBoard().getByCoords(xup, yup) != null && getBoard().getByCoords(xup, yup).getType() != TileType.INTERN_WALL) {
-                if (getBoard().getByCoords(xup, yup2) != null && getBoard().getByCoords(xup, yup2).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xup, yup).getType() == TileType.GRASS) {
+            if (getBoard().getByCoords(xup, yup) != null && getBoard().getByCoords(xup, yup).getType() != TileType.WALL) {
+                if (getBoard().getByCoords(xup, yup2) != null && getBoard().getByCoords(xup, yup2).getType() != TileType.WALL && getBoard().getByCoords(xup, yup).getType() == TileType.GRASS) {
                     draw(xup, yup2);
-                    if (e.getSprite().getX() == xup && e.getSprite().getY() == yup2) e.dead();
+
+                    // Si c'est le joueur qui pose une bmmbe
+                    if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xup && e.getSprite().getY() == yup2) {
+                        e.dead();
+                    }
+                    if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xup && ennemy.getSprite().getY() == yup2) {
+                        ennemy.dead();
+                    }
+
+                    // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                    if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xup && ennemy.getSprite().getY() == yup2) {
+                        ennemy.dead();
+                    }
                 }
+
                 draw(tile.getX(), tile.getY());
                 draw(xup, yup);
-                if (e.getSprite().getX() == xup && e.getSprite().getY() == yup) e.dead();
+
+                // Si c'est le joueur qui pose une bmmbe
+                if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xup && e.getSprite().getY() == yup) {
+                    e.dead();
+                }
+                if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xup && ennemy.getSprite().getY() == yup) {
+                    ennemy.dead();
+                }
+
+                // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xup && ennemy.getSprite().getY() == yup) {
+                    ennemy.dead();
+                }
             }
 
 
-            if (getBoard().getByCoords(xdown, ydown) != null && getBoard().getByCoords(xdown, ydown).getType() != TileType.INTERN_WALL) {
-                if (getBoard().getByCoords(xdown, ydown2) != null && getBoard().getByCoords(xdown, ydown2).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xdown, ydown).getType() == TileType.GRASS) {
+            if (getBoard().getByCoords(xdown, ydown) != null && getBoard().getByCoords(xdown, ydown).getType() != TileType.WALL) {
+                if (getBoard().getByCoords(xdown, ydown2) != null && getBoard().getByCoords(xdown, ydown2).getType() != TileType.WALL && getBoard().getByCoords(xdown, ydown).getType() == TileType.GRASS) {
                     draw(xdown, ydown2);
-                    if (e.getSprite().getX() == xdown && e.getSprite().getY() == ydown2) e.dead();
+
+                    // Si c'est le joueur qui pose une bmmbe
+                    if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xdown && e.getSprite().getY() == ydown2) {
+                        e.dead();
+                    }
+                    if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xdown && ennemy.getSprite().getY() == ydown2) {
+                        ennemy.dead();
+                    }
+
+                    // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                    if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xdown && ennemy.getSprite().getY() == ydown2) {
+                        ennemy.dead();
+                    }
                 }
+
                 draw(tile.getX(), tile.getY());
                 draw(xdown, ydown);
-                if (e.getSprite().getX() == xdown && e.getSprite().getY() == ydown) e.dead();
+
+                // Si c'est le joueur qui pose une bmmbe
+                if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xdown && e.getSprite().getY() == ydown) {
+                    e.dead();
+                }
+                if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xdown && ennemy.getSprite().getY() == ydown) {
+                    ennemy.dead();
+                }
+
+                // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xdown && ennemy.getSprite().getY() == ydown) {
+                    ennemy.dead();
+                }
             }
 
 
-            if (getBoard().getByCoords(xleft, yleft) != null && getBoard().getByCoords(xleft, yleft).getType() != TileType.INTERN_WALL) {
-                if (getBoard().getByCoords(xleft2, yleft) != null && getBoard().getByCoords(xleft2, yleft).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xleft, yleft).getType() == TileType.GRASS) {
+            if (getBoard().getByCoords(xleft, yleft) != null && getBoard().getByCoords(xleft, yleft).getType() != TileType.WALL) {
+                if (getBoard().getByCoords(xleft2, yleft) != null && getBoard().getByCoords(xleft2, yleft).getType() != TileType.WALL && getBoard().getByCoords(xleft, yleft).getType() == TileType.GRASS) {
                     draw(xleft2, yleft);
-                    if (e.getSprite().getX() == xleft2 && e.getSprite().getY() == yleft) e.dead();
+
+                    // Si c'est le joueur qui pose une bmmbe
+                    if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xleft2 && e.getSprite().getY() == yleft) {
+                        e.dead();
+                    }
+                    if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xleft2 && ennemy.getSprite().getY() == yleft) {
+                        ennemy.dead();
+                    }
+
+                    // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                    if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xleft2 && ennemy.getSprite().getY() == yleft) {
+                        ennemy.dead();
+                    }
                 }
+
                 draw(tile.getX(), tile.getY());
                 draw(xleft, yleft);
-                if (e.getSprite().getX() == xleft && e.getSprite().getY() == yleft) e.dead();
+
+                // Si c'est le joueur qui pose une bmmbe
+                if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xleft && e.getSprite().getY() == yleft) {
+                    e.dead();
+                }
+                if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xleft && ennemy.getSprite().getY() == yleft) {
+                    ennemy.dead();
+                }
+
+                // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xleft && ennemy.getSprite().getY() == yleft) {
+                    ennemy.dead();
+                }
             }
 
 
-            if (getBoard().getByCoords(xright, yright) != null && getBoard().getByCoords(xright, yright).getType() != TileType.INTERN_WALL) {
-                if (getBoard().getByCoords(xright2, yright) != null && getBoard().getByCoords(xright2, yright).getType() != TileType.INTERN_WALL && getBoard().getByCoords(xright, yright).getType() == TileType.GRASS) {
+            if (getBoard().getByCoords(xright, yright) != null && getBoard().getByCoords(xright, yright).getType() != TileType.WALL) {
+                if (getBoard().getByCoords(xright2, yright) != null && getBoard().getByCoords(xright2, yright).getType() != TileType.WALL && getBoard().getByCoords(xright, yright).getType() == TileType.GRASS) {
                     draw(xright2, yright);
-                    if (e.getSprite().getX() == xright2 && e.getSprite().getY() == yright) e.dead();
+
+                    // Si c'est le joueur qui pose une bmmbe
+                    if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xright2 && e.getSprite().getY() == yright) {
+                        e.dead();
+                    }
+                    if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xright2 && ennemy.getSprite().getY() == yright) {
+                        ennemy.dead();
+                    }
+
+                    // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                    if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xright2 && ennemy.getSprite().getY() == yright) {
+                        ennemy.dead();
+                    }
                 }
+
                 draw(tile.getX(), tile.getY());
                 draw(xright, yright);
-                if (e.getSprite().getX() == xright && e.getSprite().getY() == yright) e.dead();
+
+                // Si c'est le joueur qui pose une bmmbe
+                if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xright && e.getSprite().getY() == yright) {
+                    e.dead();
+                }
+                if (ennemy.getClass().getSimpleName().equals("IA") && ennemy.getSprite().getX() == xright && ennemy.getSprite().getY() == yright) {
+                    ennemy.dead();
+                }
+
+                // Si c'est l'IA qui pose une bombe – elle est invincible à ses propres bombes
+                if (e.getClass().getSimpleName().equals("IA") && ennemy.getClass().getSimpleName().equals("Player") && ennemy.getSprite().getX() == xright && ennemy.getSprite().getY() == yright) {
+                    ennemy.dead();
+                }
             }
 
-            if (e.getSprite().getX() == tile.getX() && e.getSprite().getY() == tile.getY()) e.dead();
+            if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == tile.getX() && e.getSprite().getY() == tile.getY())
+                e.dead();
 
-
-            if (e.getLifes() <= 0 && e.getClass().getName().equals("fr.bomberman.game.entity.Player"))
-                stage.setScene(new Death(new Group(), 600, 600, stage));
+            if (e.getLifes() <= 0)
+                stage.setScene(new Death(new Group(), 600, 600, stage, e.getClass().getSimpleName()));
+            else if (ennemy.getLifes() <= 0)
+                stage.setScene(new Death(new Group(), 600, 600, stage, ennemy.getClass().getSimpleName()));
 
         }
     }

@@ -17,16 +17,15 @@ public class Acceuil extends Scene {
 
     private static MediaPlayer music;
 
+
     /**
      * Créer une scene d'acceuil
-     *
      * @param v     Largeur
      * @param v1    Hauteur
      * @param group Groupe
      * @param stage Stage
      * @param scene Scene du jeu
      */
-
     public Acceuil(double v, double v1, Group group, Stage stage, Scene scene) {
         super(group, v, v1);
 
@@ -35,7 +34,6 @@ public class Acceuil extends Scene {
         box.setId("box");
         box.setSpacing(60);
         box.setPadding(new Insets(110, 200, 110, 200));
-
 
         // Ajout des boutons
         Button jouer = new Button("JOUER");
@@ -47,7 +45,6 @@ public class Acceuil extends Scene {
         // Ajout du style css
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);
-
 
         // Lorsque l'on clique sur le bouton jouer
         jouer.setOnMouseClicked(e -> {
@@ -62,19 +59,22 @@ public class Acceuil extends Scene {
             Timer.timerPlay();
         });
 
-        // Lorsque l'on clique sur le bouton reglage
         reglage.setOnMouseClicked(e -> option());
-
-        // Lorsque l'on clique sur le bouton aide
         aide.setOnMouseClicked(e -> aide());
-
-        // Lorsque l'on clique sur le bouton quitter
         quitter.setOnMouseClicked(e -> System.exit(0));
     }
 
+
+    /**
+     * Assigne la musique du menu
+     *
+     * @param clip Le player de la musique
+     */
     public static void setMusic(MediaPlayer clip) {
         music = clip;
     }
+
+
 
     /**
      * Méthode qui va créer une boite de dialogue permettant de gérer les reglages
@@ -104,9 +104,12 @@ public class Acceuil extends Scene {
 
         // Affichage de la boite de dialogue
         volume.showAndWait();
-
     }
 
+
+    /**
+     * Méthode qui va créer une boîte de dialogue qui affiche l'aide et les touches pour jouer
+     */
     public void aide() {
         // TODO : ajouter texte sur le gameplay
         Dialog aide = new Dialog();
