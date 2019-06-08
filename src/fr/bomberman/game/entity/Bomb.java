@@ -200,6 +200,9 @@ public class Bomb extends Entity {
                 e.dead();
 
 
+            /*
+             * LES BONUS
+             */
             final Random random = new Random();
             int rand1 = random.nextInt(10);
             int rand2 = random.nextInt(10);
@@ -209,6 +212,11 @@ public class Bomb extends Entity {
                 if (bonusType == 0) {
                     // Ajoute une bombe en plus
                     getGraphicsContext().drawImage(getSpriteManager().get("bombBonus"), tile.getX(), tile.getY());
+                    if (e.getSprite().getX() == tile.getX() && e.getSprite().getY() == tile.getY()) {
+                        // Le joueur a ramassé le bonus
+
+                    }
+
                 } else if (bonusType == 1) {
                     // Augmente la vitesse pour 5 mouvements
                 }

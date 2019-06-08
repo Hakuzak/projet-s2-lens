@@ -125,6 +125,7 @@ public class Main extends Application {
         bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);
         bombs[1] = new Bomb(spriteManager.get("bomb1"), 50, 50);
         bombs[2] = new Bomb(spriteManager.get("bomb1"), 50, 50);
+        bombs[3] = new Bomb(spriteManager.get("bomb1"), 50, 50);
 
         player.setBomb(bombs);
 
