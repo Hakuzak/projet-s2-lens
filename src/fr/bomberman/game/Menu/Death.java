@@ -33,7 +33,10 @@ public class Death extends Scene {
         hbox.setAlignment(Pos.CENTER);
         hbox.setSpacing(60);
 
-        String winner = deadEntity.equals("Player") ? "Vous avez perdu" : "Vous avez gagné";
+        String winner;
+        if (deadEntity.equals("Player")) winner = "Vous avez perdu";
+        else if (deadEntity.equals("IA")) winner = "Vous avez gagné";
+        else winner = "Il y a égalité";
 
         Label quit = new Label(winner + " \n Voulez-vous rejouer ?");
         quit.setMinHeight(200);

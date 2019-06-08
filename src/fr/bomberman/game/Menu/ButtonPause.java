@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 
 public class ButtonPause extends Label {
 
-
     public ButtonPause(Stage stage, Scene menuPause) {
         this.setText("Pause");
         this.setId("buttonPause");
@@ -17,6 +16,6 @@ public class ButtonPause extends Label {
         });
 
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-
     }
+
 }

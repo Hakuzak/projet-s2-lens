@@ -9,6 +9,8 @@ import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.util.Duration;
 
+import java.util.Random;
+
 public class Bomb extends Entity {
 
     /**
@@ -196,6 +198,22 @@ public class Bomb extends Entity {
 
             if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == tile.getX() && e.getSprite().getY() == tile.getY())
                 e.dead();
+
+
+            final Random random = new Random();
+            int rand1 = random.nextInt(10);
+            int rand2 = random.nextInt(10);
+            int bonusType = random.nextInt(2);
+            if (rand1 == rand2) {
+                // Lacher un bonus
+                if (bonusType == 0) {
+                    // Ajoute une bombe en plus
+                    getGraphicsContext().drawImage(getSpriteManager().get("bombBonus"), tile.getX(), tile.getY());
+                } else if (bonusType == 1) {
+                    // Augmente la vitesse pour 5 mouvements
+                }
+            }
+
 
             if (e.getLifes() <= 0)
                 stage.setScene(new Death(new Group(), 600, 600, stage, e.getClass().getSimpleName()));
