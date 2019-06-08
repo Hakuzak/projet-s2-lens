@@ -1,16 +1,18 @@
 package fr.bomberman.game.entity;
 
 import fr.bomberman.game.entity.tile.TileType;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.image.Image;
+import javafx.util.Duration;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class IA extends Player {
 
     private Random random;
-    private int nbPlacedBombs;
+    private int nbBombs;
     private int lifes;
 
 
@@ -41,57 +43,34 @@ public class IA extends Player {
     /**
      * Génère un nombre aléatoire en 0 et 3 qui permet de déplacer aléatoirement l'IA vers une direction définie
      */
-    private void move() {
-        int dir = (int) (Math.random() * 4);
-        int moveCount = (int) (Math.random() * 3);
+    private void move(int moveCount) {
+        int dir = random.nextInt(3) + 1;
         int m = 0;
 
         if (dir == 0) {
             while (m <= moveCount) {
                 moveDir("up");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 m++;
             }
 
         } else if (dir == 1) {
             while (m <= moveCount) {
                 moveDir("down");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 m++;
             }
 
         } else if (dir == 2) {
             while (m <= moveCount) {
                 moveDir("left");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 m++;
             }
 
         } else {
             while (m <= moveCount) {
                 moveDir("right");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 m++;
             }
-
         }
-
     }
 
 
@@ -149,18 +128,30 @@ public class IA extends Player {
      * Se déplace et pose une bombe toutes les X secondes
      */
     public void play() {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                move();
+//        int moveCount = random.nextInt(2) + 1;
+        int actualisation = (int) (Math.random() * 5) + 1;
+//
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        }, 0, actualisation);
 
-                if (nbPlacedBombs == 3) nbPlacedBombs = 0;
-                placeBomb();
-                move();
-            }
-        }, 0, random.nextInt(3) + 3);
+        Timeline timeline = new Timeline(new KeyFrame(
+                Duration.seconds(actualisation),
+                e -> {
+                    move((int) (Math.random() * 5) + 1);
 
+                    if (nbBombs == 3) nbBombs = 0;
+                    placeBomb();
+
+                    move((int) (Math.random() * 5) + 1);
+                }
+        ));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 
 }

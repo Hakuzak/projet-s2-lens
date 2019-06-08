@@ -58,5 +58,4 @@ public class Info extends VBox {
         timeline.play();
     }
 
-
 }
