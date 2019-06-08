@@ -27,8 +27,11 @@ public class Timer extends VBox {
         timer = new Label();
         timer.setId("timer");
 
+
         timer.setTranslateX(x);
         timer.setTranslateY(y);
+
+        timer.setText(min + ":" + sec);
 
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
@@ -47,8 +50,6 @@ public class Timer extends VBox {
                     timer.setText(min + ":" + sec);
                 }
         ));
-
-        timeline.setCycleCount(Timeline.INDEFINITE);
     }
 
 

@@ -2,13 +2,13 @@ package fr.bomberman.game.Menu;
 
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -111,16 +111,33 @@ public class Acceuil extends Scene {
      * Méthode qui va créer une boîte de dialogue qui affiche l'aide et les touches pour jouer
      */
     public void aide() {
-        // TODO : ajouter texte sur le gameplay
         Dialog aide = new Dialog();
+        aide.initModality(Modality.APPLICATION_MODAL);
         aide.getDialogPane().setMinHeight(200);
         aide.getDialogPane().setMinWidth(300);
         aide.setTitle("Aide");
         aide.setHeaderText("Vous pouvez retrouvez ici toutes \nles informations utiles pour jouer");
 
         Label texte = new Label();
-        texte.setAlignment(Pos.CENTER);
-        texte.setText("Z : up \nQ : left \nS : down \nD : right \nSpace : bomb \nEchap : pause");
+        texte.setText(
+
+                "But du jeu : \n" +
+                        "Vous disposez de 5 minutes pour détruire les blocs \n sur votre passage et réduire le nombre de vie \n de l’adversaire à 0. \n\n " +
+
+                        "Comment gagner ? \n" +
+                        "Vous gagnez si l’adversaire n’a plus de vie ou bien \nsi lorsque le temps imparti est écoulé, \nvous disposez de plus de vie que l’adversaire \n\n" +
+
+
+                        "Comment perdre ? \n " +
+                        "Vous perdez si vous n’avez  plus de vie ou bien si \n lorsque le temps imparti est écoulé, \nvous disposez de moins de vie que l’adversaire \n\n" +
+
+                        "Comment jouer ? \n" +
+                        "Z : up \n" +
+                        "Q : left \n" +
+                        "S : down \n" +
+                        "D : right \n" +
+                        "Space : bomb \n" +
+                        "Echap : pause");
 
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
 
