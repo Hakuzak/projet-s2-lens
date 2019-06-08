@@ -53,17 +53,17 @@ public class Timer extends VBox {
 
                     secondes--;
                     timer.setText(minutes + ":" + secondes);
+                    if (minutes == 0 && secondes == 0) {
+                        if (player.getLifes() > enemy.getLifes()) {
+                            stage.setScene(new Death(new Group(), 600, 600, stage, "coucou"));
+                        } else {
+                            stage.setScene(new Death(new Group(), 600, 600, stage, "coucou"));
+                        }
+                    }
                 }
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        if (minutes == 0 && secondes == 0) {
-            if (player.getLifes() > enemy.getLifes()) {
-                stage.setScene(new Death(new Group(), 600, 600, stage, player.getClass().getSimpleName()));
-            } else {
-                stage.setScene(new Death(new Group(), 600, 600, stage, enemy.getClass().getSimpleName()));
-            }
-        }
 
     }
 
