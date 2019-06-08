@@ -144,6 +144,7 @@ public class Acceuil extends Scene {
         aide.getDialogPane().setContent(texte);
         aide.getDialogPane().getButtonTypes().addAll(ok);
 
+
         aide.showAndWait();
     }
 

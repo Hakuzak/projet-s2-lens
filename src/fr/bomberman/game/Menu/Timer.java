@@ -50,6 +50,7 @@ public class Timer extends VBox {
                     timer.setText(min + ":" + sec);
                 }
         ));
+        timeline.setCycleCount(Timeline.INDEFINITE);
     }
 
 
