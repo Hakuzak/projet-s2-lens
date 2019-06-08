@@ -172,9 +172,9 @@ public class Main extends Application {
         gameScene = new Scene(root);
         Rectangle rectangle = new Rectangle(250, 650, rgb(19, 20, 38));
         rectangle.setX(1050);
-        Info infoPl = new Info(player, 1100, 200);
-        Info infoIa = new Info(ia, 1100, 400);
-        Timer time = new Timer(1100, 100);
+        Info infoPl = new Info(player, 1075, 250);
+        Info infoIa = new Info(ia, 1075, 400);
+        Timer time = new Timer(1075, 100);
         root.getChildren().addAll(rectangle, time, infoPl, infoIa);
 
         // Scène Acceuil
@@ -215,7 +215,7 @@ public class Main extends Application {
         stage.setTitle("Bomberman");
         stage.setResizable(false);
         stage.setMaxWidth(1300);
-        stage.setMaxHeight(850);
+        stage.setMaxHeight(650);
 
 
         createUI();

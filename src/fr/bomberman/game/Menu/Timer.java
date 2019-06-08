@@ -20,9 +20,13 @@ public class Timer extends VBox {
         sec = 0;
 
         timer = new Label();
+        timer.setId("timer");
 
         timer.setTranslateX(x);
         timer.setTranslateY(y);
+
+        this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
 
         this.getChildren().add(timer);
 

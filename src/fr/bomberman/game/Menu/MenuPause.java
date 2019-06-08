@@ -36,6 +36,7 @@ public class MenuPause extends Scene {
             @Override
             public void handle(MouseEvent event) {
                 stage.setScene(gameScene);
+                stage.setFullScreen(true);
                 Timer.timerPlay();
 
             }

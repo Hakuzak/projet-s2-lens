@@ -31,3 +31,14 @@
     -fx-background-radius: 30;
 }
 
+
+#info, #timer {
+    -fx-font-size: 25pt;
+    -fx-min-width: 175;
+    -fx-min-height: 50;
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-font-family: "Avenir Next";
+    -fx-background-color: rgb(155, 132, 145);
+}

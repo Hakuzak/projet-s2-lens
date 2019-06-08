@@ -16,18 +16,17 @@ public class Info extends VBox {
     protected int y;
     protected String nbVie;
     protected Label vie;
-    protected int i = 0;
 
     public Info(Player player, int x, int y) {
         this.player = player;
 
         vie = new Label();
-        vie.setMinHeight(50);
-        vie.setMinWidth(150);
-        vie.setCenterShape(true);
-
+        vie.setId("info");
         vie.setTranslateX(x);
         vie.setTranslateY(y);
+
+        this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
 
         this.getChildren().addAll(vie);
 
@@ -38,12 +37,13 @@ public class Info extends VBox {
 
     public void modifLife() {
         Timeline timeline = new Timeline(new KeyFrame(
-                Duration.seconds(1),
+                Duration.millis(500),
                 new EventHandler<ActionEvent>() {
 
                     @Override
                     public void handle(ActionEvent actionEvent) {
-                        coucou();
+                        nbVie = Integer.toString(player.getLifes());
+                        vie.setText("Vie : " + nbVie);
                     }
                 }
         ));
@@ -51,11 +51,4 @@ public class Info extends VBox {
         timeline.play();
     }
 
-
-    public void coucou() {
-        nbVie = Integer.toString(player.getLifes());
-        vie.setText("Vie : " + nbVie);
-
-
-    }
 }
