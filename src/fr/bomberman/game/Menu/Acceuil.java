@@ -120,24 +120,29 @@ public class Acceuil extends Scene {
 
         Label texte = new Label();
         texte.setText(
-
                 "But du jeu : \n" +
-                        "Vous disposez de 5 minutes pour détruire les blocs \n sur votre passage et réduire le nombre de vie \n de l’adversaire à 0. \n\n " +
+                        "Vous disposez de 5 minutes pour détruire les blocs \n " +
+                        "sur votre passage et réduire le nombre de vie \n " +
+                        "de l’adversaire à 0. \n\n " +
 
                         "Comment gagner ? \n" +
-                        "Vous gagnez si l’adversaire n’a plus de vie ou bien \nsi lorsque le temps imparti est écoulé, \nvous disposez de plus de vie que l’adversaire \n\n" +
+                        "Vous gagnez si l’adversaire n’a plus de vie ou bien \n" +
+                        "si lorsque le temps imparti est écoulé, vous disposez \n" +
+                        "de plus de vie que l’adversaire \n\n" +
 
 
                         "Comment perdre ? \n " +
-                        "Vous perdez si vous n’avez  plus de vie ou bien si \n lorsque le temps imparti est écoulé, \nvous disposez de moins de vie que l’adversaire \n\n" +
+                        "Vous perdez si vous n’avez  plus de vie ou bien si \n" +
+                        "lorsque le temps imparti est écoulé, vous disposez\n " +
+                        "de moins de vie que l’adversaire \n\n" +
 
                         "Comment jouer ? \n" +
-                        "Z : up \n" +
-                        "Q : left \n" +
-                        "S : down \n" +
-                        "D : right \n" +
-                        "Space : bomb \n" +
-                        "Echap : pause");
+                        "Z ou haut: se diriger vers le haut \n" +
+                        "Q ou gauche : se diriger vers la gauche \n" +
+                        "S ou bas : se diriger vers le bas \n" +
+                        "D ou droite: se diriger vers la droite \n" +
+                        "Space : poser une bombe \n" +
+                        "Echap : metttre le jeu en pause");
 
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
 
