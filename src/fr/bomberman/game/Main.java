@@ -89,6 +89,10 @@ public class Main extends Application {
         spriteManager.load("bomb2", "assets/images/bombs/bomb2.png");
         spriteManager.load("bomb3", "assets/images/bombs/bomb3.png");
         spriteManager.load("explosion", "assets/images/explosion/fire.png");
+
+        // Bonus
+        spriteManager.load("bombBonus", "assets/images/powerups/bomb.png");
+        spriteManager.load("speedBonus", "assets/images/powerups/speed.png");
     }
 
 
@@ -117,7 +121,7 @@ public class Main extends Application {
 
         ia = new IA("IA", spriteManager.get("ia_default"), 950, 550);
 
-        Bomb[] bombs = new Bomb[3];
+        Bomb[] bombs = new Bomb[4];
         bombs[0] = new Bomb(spriteManager.get("bomb1"), 50, 50);
         bombs[1] = new Bomb(spriteManager.get("bomb1"), 50, 50);
         bombs[2] = new Bomb(spriteManager.get("bomb1"), 50, 50);
