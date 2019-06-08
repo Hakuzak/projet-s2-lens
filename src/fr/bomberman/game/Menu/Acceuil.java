@@ -42,6 +42,7 @@ public class Acceuil extends Scene {
         Button quitter = new Button("QUITTER");
         box.getChildren().addAll(jouer, reglage, aide, quitter);
 
+
         // Ajout du style css
         this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         group.getChildren().add(box);

@@ -37,6 +37,21 @@
     -fx-alignment: center;
     -fx-text-fill: white;
     -fx-background-radius: 30;
-    -fx-font-family: "Avenir Next";
+    -fx-font-family: "Avenir";
     -fx-background-color: rgb(155, 132, 145);
+}
+
+#buttonPause {
+    -fx-font-size: 10pt;
+    -fx-min-width: 50;
+    -fx-min-height: 25;
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-font-family: "Avenir";
+    -fx-background-color: rgb(155, 132, 145);
+}
+
+#buttonPause:hover {
+    -fx-background-color: rgb(107, 127, 142);
 }

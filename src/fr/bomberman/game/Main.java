@@ -1,9 +1,6 @@
 package fr.bomberman.game;
 
-import fr.bomberman.game.Menu.Acceuil;
-import fr.bomberman.game.Menu.Info;
-import fr.bomberman.game.Menu.MenuPause;
-import fr.bomberman.game.Menu.Timer;
+import fr.bomberman.game.Menu.*;
 import fr.bomberman.game.entity.Bomb;
 import fr.bomberman.game.entity.Entity;
 import fr.bomberman.game.entity.IA;
@@ -164,12 +161,7 @@ public class Main extends Application {
         music.play();
 
         gameScene = new Scene(root);
-        Rectangle rectangle = new Rectangle(250, 650, rgb(19, 20, 38));
-        rectangle.setX(1050);
-        Info infoPl = new Info(player, 1075, 200);
-        Info infoIa = new Info(ia, 1075, 450);
-        Timer time = new Timer(1075, 50);
-        root.getChildren().addAll(rectangle, time, infoPl, infoIa);
+
 
         // Scène Acceuil
         acceuil = new Acceuil(600, 600, groupA, stage, gameScene);
@@ -185,6 +177,14 @@ public class Main extends Application {
                 Timer.timerPause();
             }
         });
+
+        Rectangle rectangle = new Rectangle(250, 650, rgb(19, 20, 38));
+        rectangle.setX(1050);
+        Info infoPl = new Info(player, 1075, 225);
+        Info infoIa = new Info(ia, 1075, 475);
+        Timer time = new Timer(1075, 75);
+        ButtonPause buttonPause = new ButtonPause(stage, menuPause);
+        root.getChildren().addAll(rectangle, time, infoPl, infoIa, buttonPause);
 
         stage.setScene(acceuil);
     }
