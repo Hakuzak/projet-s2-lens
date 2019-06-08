@@ -10,8 +10,8 @@ import javafx.util.Duration;
 public class Info extends VBox {
 
     protected Player player;
+    protected String nbVie;
     protected Label vie;
-
 
     /**
      * Crée un rectangle qui affiche le nombre de vies restantes du joueur
@@ -28,6 +28,9 @@ public class Info extends VBox {
         vie.setTranslateX(x);
         vie.setTranslateY(y);
 
+        this.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
+
         this.getChildren().addAll(vie);
         modifLife();
     }
@@ -38,13 +41,10 @@ public class Info extends VBox {
      */
     public void modifLife() {
         Timeline timeline = new Timeline(new KeyFrame(
-                Duration.seconds(1),
-                new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent actionEvent) {
-                        coucou();
-                    }
+                Duration.millis(500),
+                e -> {
+                    nbVie = Integer.toString(player.getLifes());
+                    vie.setText("Vie : " + nbVie);
                 }
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -52,10 +52,4 @@ public class Info extends VBox {
     }
 
 
-    public void coucou() {
-        nbVie = Integer.toString(player.getLifes());
-        vie.setText("Vie : " + nbVie);
-
-
-    }
 }

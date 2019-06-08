@@ -44,7 +44,9 @@ public class MenuPause extends Scene {
 
         reprendre.setOnMouseClicked(e -> {
             stage.setScene(gameScene);
+            stage.setFullScreen(true);
             Timer.timerPlay();
+
         });
 
         reglage.setOnMouseClicked(e -> option());
