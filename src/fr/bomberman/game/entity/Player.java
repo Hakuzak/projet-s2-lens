@@ -253,7 +253,7 @@ public class Player extends Entity {
         timeline.play();
     }
 
-    protected void getBonus(double x, double y) {
+    private void getBonus(double x, double y) {
         if (board.getByCoords(x, y).isHaveBonus()) {
             if (nbBombsCanPlace <= 3) nbBombsCanPlace = 4;
             getGraphicsContext().drawImage(getSpriteManager().get("grass"), x, y);

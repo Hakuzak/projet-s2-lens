@@ -148,6 +148,7 @@ public class Main extends Application {
 
         root.getChildren().add(player.getSprite());
         root.getChildren().add(ia.getSprite());
+
         ia.play();
 
         Board.setSpriteManager(spriteManager);

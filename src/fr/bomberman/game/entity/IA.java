@@ -43,31 +43,52 @@ public class IA extends Player {
     /**
      * Génère un nombre aléatoire en 0 et 3 qui permet de déplacer aléatoirement l'IA vers une direction définie
      */
-    private void move(int moveCount) {
-        int dir = random.nextInt(3) + 1;
+    private void move() {
+        int dir = random.nextInt(4) + 1;
+        int moveCount = (int) (Math.random() * 3);
         int m = 0;
 
         if (dir == 0) {
             while (m <= moveCount) {
                 moveDir("up");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 m++;
             }
 
         } else if (dir == 1) {
             while (m <= moveCount) {
                 moveDir("down");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 m++;
             }
 
         } else if (dir == 2) {
             while (m <= moveCount) {
                 moveDir("left");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 m++;
             }
 
         } else {
             while (m <= moveCount) {
                 moveDir("right");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 m++;
             }
         }
@@ -128,26 +149,17 @@ public class IA extends Player {
      * Se déplace et pose une bombe toutes les X secondes
      */
     public void play() {
-//        int moveCount = random.nextInt(2) + 1;
         int actualisation = (int) (Math.random() * 5) + 1;
-//
-//        Timer timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        }, 0, actualisation);
 
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.seconds(actualisation),
                 e -> {
-                    move((int) (Math.random() * 5) + 1);
+                    move();
 
                     if (nbBombs == 3) nbBombs = 0;
                     placeBomb();
 
-                    move((int) (Math.random() * 5) + 1);
+//                    move();
                 }
         ));
         timeline.setCycleCount(Animation.INDEFINITE);
