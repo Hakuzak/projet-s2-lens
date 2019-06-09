@@ -16,6 +16,9 @@ public class Player extends Entity {
     protected Bomb[] bombs;
     private int nbPlacedBombs;
     protected Player ennemy;
+    protected int nbBombsCanPlace = 3;
+
+    private int playerSpeed = 50;
 
 
     /**
@@ -60,6 +63,9 @@ public class Player extends Entity {
 
             if ((!collideY(50) && getSprite().getX() % 100 == 0) || collideY(50) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() - 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveUp();
+
+            getBonus(getSprite().getX(), getSprite().getY());
+
         }
 
         // Move down
@@ -73,6 +79,8 @@ public class Player extends Entity {
 
             if ((!collideY(550) && getSprite().getX() % 100 == 0) || collideY(550) || getBoard().getByCoords(getSprite().getX(), getSprite().getY() + 50).getType() == TileType.DESTRUCTIBLE) {
             } else moveDown();
+
+            getBonus(getSprite().getX(), getSprite().getY());
         }
 
         // Move left
@@ -86,6 +94,8 @@ public class Player extends Entity {
 
             if ((!collideX(0) && getSprite().getY() % 100 == 0) || collideX(50) || getBoard().getByCoords(getSprite().getX() - 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveLeft();
+
+            getBonus(getSprite().getX(), getSprite().getY());
         }
 
         // Move right
@@ -99,12 +109,15 @@ public class Player extends Entity {
 
             if ((!collideX(950) && getSprite().getY() % 100 == 0) || collideX(950) || getBoard().getByCoords(getSprite().getX() + 50, getSprite().getY()).getType() == TileType.DESTRUCTIBLE) {
             } else moveRight();
+
+            getBonus(getSprite().getX(), getSprite().getY());
         }
 
         // Place bomb
         if (e.getCode() == KeyCode.SPACE) {
             placeBomb();
         }
+
     }
 
 
@@ -134,7 +147,7 @@ public class Player extends Entity {
      * Déplace le joueur vers le haut
      */
     protected void moveUp() {
-        this.getSprite().setY(this.getSprite().getY() - 50);
+        this.getSprite().setY(this.getSprite().getY() - playerSpeed);
     }
 
 
@@ -142,7 +155,7 @@ public class Player extends Entity {
      * Déplace le joueur vers le bas
      */
     protected void moveDown() {
-        this.getSprite().setY(this.getSprite().getY() + 50);
+        this.getSprite().setY(this.getSprite().getY() + playerSpeed);
     }
 
 
@@ -150,7 +163,7 @@ public class Player extends Entity {
      * Déplace le joueur vers la gauche
      */
     protected void moveLeft() {
-        this.getSprite().setX(this.getSprite().getX() - 50);
+        this.getSprite().setX(this.getSprite().getX() - playerSpeed);
     }
 
 
@@ -158,7 +171,7 @@ public class Player extends Entity {
      * Déplace le joueur vers la droite
      */
     protected void moveRight() {
-        this.getSprite().setX(this.getSprite().getX() + 50);
+        this.getSprite().setX(this.getSprite().getX() + playerSpeed);
     }
 
 
@@ -210,7 +223,9 @@ public class Player extends Entity {
      * Permet de placer une bombe sur la position du joueur
      */
     protected void placeBomb() {
-        if (nbPlacedBombs == 3) nbPlacedBombs = 0;
+        if (nbPlacedBombs == nbBombsCanPlace) {
+            nbPlacedBombs = 0;
+        }
 
         bombs[nbPlacedBombs].getSprite().setX(this.getSprite().getX());
         bombs[nbPlacedBombs].getSprite().setY(this.getSprite().getY());
@@ -236,6 +251,13 @@ public class Player extends Entity {
                 })
         );
         timeline.play();
+    }
+
+    protected void getBonus(double x, double y) {
+        if (board.getByCoords(x, y).isHaveBonus()) {
+            if (nbBombsCanPlace <= 3) nbBombsCanPlace = 4;
+            getGraphicsContext().drawImage(getSpriteManager().get("grass"), x, y);
+        }
     }
 
 }

@@ -26,8 +26,8 @@ public class Timer extends VBox {
      * @param y La position en y pour l'affichage
      */
     public Timer(int x, int y, Stage stage, Player player, Player enemy) {
-        minutes = 0;
-        secondes = 10;
+        minutes = 5;
+        secondes = 0;
 
         timer = new Label();
         timer.setId("timer");

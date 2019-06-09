@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 public class Tile extends Entity {
 
     private TileType type;
+    private boolean haveBonus;
 
 
     /**
@@ -19,6 +20,7 @@ public class Tile extends Entity {
     public Tile(Image image, int x, int y, TileType type) {
         super(image, x, y);
         this.type = type;
+        this.haveBonus = false;
     }
 
 
@@ -37,6 +39,36 @@ public class Tile extends Entity {
      */
     public void setType(TileType type) {
         this.type = type;
+    }
+
+    /**
+     * Retourne le bonus s'il y en a un
+     *
+     * @return Bonus
+     */
+    public boolean isHaveBonus() {
+        return haveBonus;
+    }
+
+
+    /**
+     * Assigne un bonus à la tuile
+     */
+    public void setBonus() {
+        haveBonus = true;
+    }
+
+
+    /**
+     * Supprime le bonus une fois qu'il a été pris
+     */
+    public void killBonus() {
+        this.haveBonus = false;
+    }
+
+
+    public void dropBonus() {
+        getGraphicsContext().drawImage(getSpriteManager().get("bombBonus"), getX(), getY());
     }
 
 }
