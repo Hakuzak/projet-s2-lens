@@ -16,7 +16,6 @@ public class Timer extends VBox {
     protected static int secondes;
     protected static Timeline timeline;
     protected Label timer;
-    protected Stage stage;
 
 
     /**
@@ -65,9 +64,8 @@ public class Timer extends VBox {
                 }
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
-
-
     }
+
 
     /**
      * Met le timer en pause
@@ -76,6 +74,7 @@ public class Timer extends VBox {
         timeline.pause();
     }
 
+
     /**
      * Redémarre le timer
      */
@@ -83,21 +82,13 @@ public class Timer extends VBox {
         timeline.play();
     }
 
-    /**
-     * Retourne le nombre de minutes
-     *
-     * @return int
-     */
-    public static int getMinutes() {
-        return minutes;
-    }
 
     /**
-     * Retourne le nombre de secondes
-     *
-     * @return int
+     * Redémarre le timer quand la partie est finie
      */
-    public static int getSecondes() {
-        return secondes;
+    public void restart() {
+        minutes = 5;
+        secondes = 0;
     }
+
 }

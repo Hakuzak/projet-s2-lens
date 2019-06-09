@@ -35,6 +35,7 @@ public class Main extends Application {
     private static Acceuil acceuil;
     private static MenuPause menuPause;
     private static Scene gameScene;
+    private static Timer time;
 
     private static Player player;
     private static IA ia;
@@ -188,7 +189,9 @@ public class Main extends Application {
         rectangle.setX(1050);
         Info infoPl = new Info(player, 1075, 225);
         Info infoIa = new Info(ia, 1075, 475);
-        Timer time = new Timer(1075, 75, stage, player, ia);
+
+        time = new Timer(1075, 75, stage, player, ia);
+
         ButtonPause buttonPause = new ButtonPause(stage, menuPause);
         root.getChildren().addAll(rectangle, time, infoPl, infoIa, buttonPause);
 
@@ -220,6 +223,20 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static void regenerate(Stage stage) {
+        board.clear();
+
+        Board.setSpriteManager(spriteManager);
+        board = new Board();
+        board.draw(gc);
+        Entity.setBoard(board);
+
+        player.setLifes(3);
+        ia.setLifes(3);
+        time.restart();
+        stage.setScene(gameScene);
     }
 
 }

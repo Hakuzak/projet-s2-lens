@@ -260,4 +260,8 @@ public class Player extends Entity {
         }
     }
 
+    public void setLifes(int n) {
+        lifes = n;
+    }
+
 }

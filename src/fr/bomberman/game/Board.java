@@ -180,4 +180,8 @@ public class Board extends Pane {
         return null;
     }
 
+    public void clear() {
+        tiles = new Vector<>();
+    }
+
 }

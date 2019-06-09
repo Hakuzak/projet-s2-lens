@@ -56,8 +56,7 @@ public class Death extends Scene {
         group.getChildren().add(vbox);
 
         yes.setOnMouseClicked(e -> {
-            Main main = new Main();
-            main.start(stage);
+            Main.regenerate(stage);
         });
         no.setOnMouseClicked(e -> System.exit(0));
     }
