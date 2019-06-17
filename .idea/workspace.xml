@@ -5,8 +5,121 @@
       <artifact name="Bomberman2:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="uml://JAVA/fr.bomberman.game.Main" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Modifications diverses" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Enlève un point de vie si le joueur ou l'IA est dans les flammes et affiche le menu de mort personnalisé">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/Acceuil.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/MenuPause.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/class-use/Acceuil.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/class-use/MenuPause.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/Menu/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/SpriteManager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/class-use/Board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/class-use/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/class-use/SpriteManager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/Bomb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/Entity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/IA.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/class-use/Bomb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/class-use/Entity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/class-use/IA.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/class-use/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/Tile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/TileType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/class-use/Tile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/class-use/TileType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/entity/tile/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/exception/InvalidSpriteManager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/exception/class-use/InvalidSpriteManager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/exception/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/exception/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/exception/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/fr/bomberman/game/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-3.3.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/member-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/package-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doc/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java" afterDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,45 +179,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+            <state relative-caret-position="450">
+              <caret line="264" selection-start-line="264" selection-end-line="264" />
+              <folding>
+                <element signature="docComment;method#Bomb#0;class#Bomb#0" />
+                <element signature="method#Bomb#0;class#Bomb#0" />
+                <element signature="docComment;method#explosion#0;class#Bomb#0" />
+                <element signature="method#explosion#0;class#Bomb#0" />
+                <element signature="docComment;method#drawExplosion#0;class#Bomb#0" />
+                <element signature="method#drawExplosion#0;class#Bomb#0" />
+                <element signature="docComment;method#drawGrass#0;class#Bomb#0" />
+                <element signature="docComment;method#draw#0;class#Bomb#0" />
+                <element signature="method#draw#0;class#Bomb#0" />
+                <element signature="docComment;method#dropBonus#0;class#Bomb#0" />
+                <element signature="method#dropBonus#0;class#Bomb#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/IA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1485">
+              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+              <folding>
+                <element signature="docComment;method#IA#0;class#IA#0" />
+                <element signature="method#IA#0;class#IA#0" />
+                <element signature="docComment;method#setBombs#0;class#IA#0" />
+                <element signature="docComment;method#move#0;class#IA#0" />
+                <element signature="docComment;method#moveDir#0;class#IA#0" />
+                <element signature="docComment;method#getLifes#0;class#IA#0" />
+                <element signature="e#4045#4046#0" expanded="true" />
+                <element signature="e#4073#4074#0" expanded="true" />
+                <element signature="docComment;method#dead#0;class#IA#0" />
+                <element signature="e#4145#4146#0" expanded="true" />
+                <element signature="e#4173#4174#0" expanded="true" />
+                <element signature="docComment;method#play#0;class#IA#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Board.java">
+        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="168">
+              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/Death.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#createUI#0;class#Main#0" />
+                <element signature="method#createUI#0;class#Main#0" />
+                <element signature="docComment;method#loadSprites#0;class#Main#0" />
+                <element signature="docComment;method#playMusic#0;class#Main#0" />
+                <element signature="method#playMusic#0;class#Main#0" />
+                <element signature="docComment;method#createGame#0;class#Main#0" />
+                <element signature="docComment;method#createScenes#0;class#Main#0" />
+                <element signature="docComment;method#start#0;class#Main#0" />
               </folding>
             </state>
           </provider>
@@ -115,11 +247,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="package-info" />
         <option value="Singleton" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -144,26 +276,32 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/exception/InvalidSpriteManager.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/TileType.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/Tile.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/Accueil.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/Acceuil.java" />
         <option value="$PROJECT_DIR$/Doc/stylesheet.css" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/IEntity.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/IEntity.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/Acceuil.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/IA.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Config.java" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/SpriteManager.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/MenuPause.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Config.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/Acceuil.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/style.css" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/IEntity.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/Death.java" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Main.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/TileType.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/Info.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/ButtonPause.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/Bonus.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/bonus/BonusType.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/bonus/Bonus.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/Tile.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/IA.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/Death.java" />
         <option value="$PROJECT_DIR$/src/fr/bomberman/game/Board.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Main.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/Menu/Timer.java" />
+        <option value="$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java" />
       </list>
     </option>
   </component>
@@ -179,38 +317,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="boom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="musics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
@@ -235,6 +349,14 @@
               <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="tile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Bomberman2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bomberman2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="Menu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -244,6 +366,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -251,25 +374,30 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images/powerups" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/images/blocks" />
-      <recent name="$PROJECT_DIR$/assets/images/player" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/fr/bomberman/game/Menu" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images/powerups" />
+      <recent name="$PROJECT_DIR$/assets/images/blocks" />
+      <recent name="$PROJECT_DIR$/assets/images/player" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -358,7 +486,7 @@
     </configuration>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -400,7 +528,20 @@
       <workItem from="1559719077628" duration="2411000" />
       <workItem from="1559732163451" duration="12018000" />
       <workItem from="1559811855976" duration="545000" />
-      <workItem from="1559837800677" duration="407000" />
+      <workItem from="1559837800677" duration="7075000" />
+      <workItem from="1559910392413" duration="16939000" />
+      <workItem from="1559942352102" duration="212000" />
+      <workItem from="1559942628372" duration="148000" />
+      <workItem from="1559942789413" duration="1525000" />
+      <workItem from="1559988047898" duration="18867000" />
+      <workItem from="1560085667132" duration="5787000" />
+      <workItem from="1560181371468" duration="36000" />
+      <workItem from="1560250440796" duration="128000" />
+      <workItem from="1560250572723" duration="1576000" />
+      <workItem from="1560367709754" duration="43000" />
+      <workItem from="1560368153310" duration="409000" />
+      <workItem from="1560373172761" duration="675000" />
+      <workItem from="1560416066208" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Poser une bombe et animation de la mèche">
       <created>1558978615034</created>
@@ -549,11 +690,102 @@
       <option name="project" value="LOCAL" />
       <updated>1559837853075</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Modifications diverses">
+      <created>1559838781596</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1559838781596</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Correction de bugs">
+      <created>1559839779815</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1559839779815</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Ecran de mort pour le joueur et pour l'IA">
+      <created>1559914680809</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1559914680809</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Enlève un point de vie si le joueur ou l'IA est dans les flammes et affiche le menu de mort personnalisé">
+      <created>1559938499923</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1559938499923</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Refactoring multiple">
+      <created>1559941345378</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1559941345378</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Simplification du CSS">
+      <created>1559941524907</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1559941524907</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Diverses modifications">
+      <created>1559944293554</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1559944293554</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Petits fix">
+      <created>1560005341798</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1560005341798</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Menu de mort pour l'égalité">
+      <created>1560006442828</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560006442828</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Correction de bugs">
+      <created>1560007998668</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560007998668</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Ajout du bonus de bombe">
+      <created>1560087191856</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1560087191856</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Correction de l'IA">
+      <created>1560090602616</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560090602616</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Ajout de la regénération du terrain quand on recommence une partie">
+      <created>1560091565700</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1560091565700</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98098000" />
+    <option name="totallyTimeSpent" value="151136000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -566,16 +798,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24606581" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.2532189" />
+      <window_info id="Structure" order="1" weight="0.24964234" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866243" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2878981" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28535032" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -589,7 +820,8 @@
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32611465" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32229298" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="17" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -608,10 +840,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Poser une bombe et animation de la mèche" />
-    <MESSAGE value="Ajout acceuil" />
-    <MESSAGE value="Ajout des collisions du joueur" />
-    <MESSAGE value="Début de la gestion de la musique" />
     <MESSAGE value="Musique différente sur la scène de jeu et de menu" />
     <MESSAGE value="Musique différente sur la scène de menu et de jeu" />
     <MESSAGE value="Nettoyage de Main.java" />
@@ -626,7 +854,18 @@
     <MESSAGE value="Modification de la JavaDoc et suppression des images inutiles" />
     <MESSAGE value="Explosion de la bombe et modifications diverses" />
     <MESSAGE value="Modifications diverses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifications diverses" />
+    <MESSAGE value="Ecran de mort pour le joueur et pour l'IA" />
+    <MESSAGE value="Enlève un point de vie si le joueur ou l'IA est dans les flammes et affiche le menu de mort personnalisé" />
+    <MESSAGE value="Refactoring multiple" />
+    <MESSAGE value="Simplification du CSS" />
+    <MESSAGE value="Diverses modifications" />
+    <MESSAGE value="Petits fix" />
+    <MESSAGE value="Menu de mort pour l'égalité" />
+    <MESSAGE value="Correction de bugs" />
+    <MESSAGE value="Ajout du bonus de bombe" />
+    <MESSAGE value="Correction de l'IA" />
+    <MESSAGE value="Ajout de la regénération du terrain quand on recommence une partie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la regénération du terrain quand on recommence une partie" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -636,130 +875,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/DestructibleTile.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Game.java" />
-    <entry file="file://$PROJECT_DIR$/Class Diagram" />
-    <entry file="uml://JAVA/fr.bomberman.game.Main">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>fr.bomberman.game.Main</OriginalElement>
-          <nodes>
-            <node x="" y="">javafx.application.Application</node>
-            <node x="" y="">fr.bomberman.game.Main</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.9260552338343822" x="40.0" y="197.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/fr.bomberman.game.SpriteManager">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>fr.bomberman.game.SpriteManager</OriginalElement>
-          <nodes>
-            <node x="" y="">fr.bomberman.game.SpriteManager</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="69.0" y="13.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/fr.bomberman.game.entity.Entity">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>fr.bomberman.game.entity.Entity</OriginalElement>
-          <nodes>
-            <node x="" y="">javafx.scene.Node</node>
-            <node x="" y="">fr.bomberman.game.entity.Entity</node>
-            <node x="" y="">javafx.event.EventTarget</node>
-            <node x="" y="">com.sun.javafx.beans.IDProperty</node>
-            <node x="" y="">javafx.scene.shape.Shape</node>
-            <node x="" y="">javafx.css.Styleable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.2345858252628712" x="401.0" y="172.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/fr.bomberman.game.entity.Player">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>fr.bomberman.game.entity.Player</OriginalElement>
-          <nodes>
-            <node x="" y="">fr.bomberman.game.entity.Player</node>
-            <node x="" y="">javafx.scene.Node</node>
-            <node x="" y="">fr.bomberman.game.entity.Entity</node>
-            <node x="" y="">javafx.event.EventTarget</node>
-            <node x="" y="">com.sun.javafx.beans.IDProperty</node>
-            <node x="" y="">javafx.scene.shape.Shape</node>
-            <node x="" y="">javafx.css.Styleable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="194.0" y="165.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/fr.bomberman.game.Board">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>fr.bomberman.game.Board</OriginalElement>
-          <nodes>
-            <node x="" y="">javafx.scene.Parent</node>
-            <node x="" y="">fr.bomberman.game.Board</node>
-            <node x="" y="">javafx.scene.layout.Region</node>
-            <node x="" y="">javafx.beans.DefaultProperty</node>
-            <node x="" y="">javafx.scene.Node</node>
-            <node x="" y="">javafx.event.EventTarget</node>
-            <node x="" y="">com.sun.javafx.beans.IDProperty</node>
-            <node x="" y="">javafx.css.Styleable</node>
-            <node x="" y="">javafx.scene.layout.Pane</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="207.0" y="203.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Entity.uml" />
     <entry file="file://$PROJECT_DIR$/Untitled" />
     <entry file="file://$PROJECT_DIR$/Untitled.uml" />
     <entry file="file://$PROJECT_DIR$/assets/images/blocks/block_pierre2.png" />
@@ -772,179 +887,367 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Bomberman/src/fr/bomberman/game/entity/Entity.java" />
     <entry file="file://$PROJECT_DIR$/../Bomberman/src/fr/bomberman/game/entity/Player.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/TileType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="16" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/bombs/bomb2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/bombs/bomb3.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Doc/jquery/jquery-ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1621" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Doc/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12953">
-          <caret line="867" column="26" lean-forward="true" selection-start-line="867" selection-start-column="26" selection-end-line="867" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Doc/jquery/jquery-ui.css" />
+    <entry file="file://$PROJECT_DIR$/Doc/stylesheet.css" />
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/package-info.java" />
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/IEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/bombs/bomb1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/Acceuil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="79" selection-start-line="79" selection-end-line="105" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/boom/boom_2-1-2-2.png" />
     <entry file="file://$PROJECT_DIR$/assets/images/boom/boom.png" />
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Config.java" />
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/Bomberman2.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="392" column="19" selection-start-line="392" selection-start-column="19" selection-end-line="392" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/SpriteManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+        <state relative-caret-position="300">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/MenuPause.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#SpriteManager#0;class#SpriteManager#0" />
+            <element signature="docComment;method#load#0;class#SpriteManager#0" />
+            <element signature="method#load#0;class#SpriteManager#0" />
+            <element signature="docComment;method#get#0;class#SpriteManager#0" />
+            <element signature="method#get#0;class#SpriteManager#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/IA.java">
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/projet-ihm2.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/description.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/lib1.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/IEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        <state relative-caret-position="60">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Entity#0;class#Entity#0" />
+            <element signature="method#Entity#0;class#Entity#0" />
+            <element signature="docComment;method#getSpriteManager#0;class#Entity#0" />
+            <element signature="docComment;method#setSpriteManager#0;class#Entity#0" />
+            <element signature="docComment;method#getBoard#0;class#Entity#0" />
+            <element signature="docComment;method#setBoard#0;class#Entity#0" />
+            <element signature="docComment;method#getGraphicsContext#0;class#Entity#0" />
+            <element signature="docComment;method#setGraphicsContext#0;class#Entity#0" />
+            <element signature="docComment;method#setStage#0;class#Entity#0" />
+            <element signature="docComment;method#getSprite#0;class#Entity#0" />
+            <element signature="docComment;method#getX#0;class#Entity#0" />
+            <element signature="docComment;method#getY#0;class#Entity#0" />
+            <element signature="docComment;method#getWidth#0;class#Entity#0" />
+            <element signature="docComment;method#getHeight#0;class#Entity#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/MenuPause.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="100" column="158" selection-start-line="100" selection-start-column="158" selection-end-line="100" selection-end-column="158" />
+        <state relative-caret-position="105">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
-            <element signature="e#3881#3882#0" expanded="true" />
+            <element signature="docComment;method#MenuPause#0;class#MenuPause#0" />
+            <element signature="method#MenuPause#0;class#MenuPause#0" />
+            <element signature="docComment;method#setMusic#0;class#MenuPause#0" />
+            <element signature="docComment;method#option#0;class#MenuPause#0" />
+            <element signature="method#option#0;class#MenuPause#0" />
+            <element signature="docComment;method#aide#0;class#MenuPause#0" />
+            <element signature="method#aide#0;class#MenuPause#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/Info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        <state relative-caret-position="255">
+          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;method#Info#0;class#Info#0" />
+            <element signature="method#Info#0;class#Info#0" />
+            <element signature="docComment;method#modifLife#0;class#Info#0" />
+            <element signature="method#modifLife#0;class#Info#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/ButtonPause.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="96" selection-start-line="17" selection-start-column="96" selection-end-line="17" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/Acceuil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;method#Acceuil#0;class#Acceuil#0" />
+            <element signature="method#Acceuil#0;class#Acceuil#0" />
+            <element signature="docComment;method#setMusic#0;class#Acceuil#0" />
+            <element signature="docComment;method#option#0;class#Acceuil#0" />
+            <element signature="method#option#0;class#Acceuil#0" />
+            <element signature="docComment;method#aide#0;class#Acceuil#0" />
+            <element signature="method#aide#0;class#Acceuil#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/powerups/bomb.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/bonus/BonusType.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/bonus/Bonus.java" />
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Tile#0;class#Tile#0" />
+            <element signature="docComment;method#getType#0;class#Tile#0" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="docComment;method#setType#0;class#Tile#0" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="docComment;method#getBonus#0;class#Tile#0" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="docComment;method#setBonus#0;class#Tile#0" />
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="docComment;method#killBonus#0;class#Tile#0" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/Death.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="302">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Death#0;class#Death#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
+        <state relative-caret-position="329">
+          <caret line="263" column="18" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="18" />
+          <folding>
+            <element signature="docComment;method#Player#0;class#Player#0" />
+            <element signature="method#Player#0;class#Player#0" />
+            <element signature="docComment;method#handleEvents#0;class#Player#0" />
+            <element signature="docComment;method#handlePressed#0;class#Player#0" />
+            <element signature="docComment;method#collideX#0;class#Player#0" />
+            <element signature="docComment;method#collideY#0;class#Player#0" />
+            <element signature="docComment;method#moveUp#0;class#Player#0" />
+            <element signature="docComment;method#moveDown#0;class#Player#0" />
+            <element signature="docComment;method#moveLeft#0;class#Player#0" />
+            <element signature="docComment;method#moveRight#0;class#Player#0" />
+            <element signature="docComment;method#setEnnemy#0;class#Player#0" />
+            <element signature="docComment;method#getLifes#0;class#Player#0" />
+            <element signature="docComment;method#dead#0;class#Player#0" />
+            <element signature="docComment;method#getNom#0;class#Player#0" />
+            <element signature="docComment;method#setBomb#0;class#Player#0" />
+            <element signature="docComment;method#placeBomb#0;class#Player#0" />
+            <element signature="docComment;method#explodeBomb#0;class#Player#0" />
+            <element signature="e#7857#7858#0" expanded="true" />
+            <element signature="e#7882#7883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Menu/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Timer#0;class#Timer#0" />
+            <element signature="docComment;method#timerPause#0;class#Timer#0" />
+            <element signature="docComment;method#timerPlay#0;class#Timer#0" />
+            <element signature="docComment;method#restart#0;class#Timer#0" />
+            <element signature="method#restart#0;class#Timer#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        <state relative-caret-position="363">
+          <caret line="183" column="31" selection-start-line="183" selection-start-column="31" selection-end-line="183" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Board#0;class#Board#0" />
+            <element signature="method#Board#0;class#Board#0" />
+            <element signature="docComment;method#setSpriteManager#0;class#Board#0" />
+            <element signature="docComment;method#add#0;class#Board#0" />
+            <element signature="docComment;method#draw#0;class#Board#0" />
+            <element signature="method#draw#0;class#Board#0" />
+            <element signature="docComment;method#generate#0;class#Board#0" />
+            <element signature="method#generate#0;class#Board#0" />
+            <element signature="docComment;method#getByCoords#0;class#Board#0" />
+            <element signature="method#getByCoords#0;class#Board#0" />
+            <element signature="e#5801#5802#0" expanded="true" />
+            <element signature="e#5838#5839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/tile/TileType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="docComment;class#TileType#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/fr.bomberman.game.Main">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>fr.bomberman.game.Main</OriginalElement>
+          <nodes>
+            <node x="-23.0" y="581.0">javafx.application.Application</node>
+            <node x="458.5" y="-15.0">fr.bomberman.game.Board</node>
+            <node x="886.5" y="-39.5">fr.bomberman.game.entity.Bomb</node>
+            <node x="44.5" y="-4.5">fr.bomberman.game.Main</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="fr.bomberman.game.Main" target="javafx.application.Application">
+              <point x="0.0" y="244.5" />
+              <point x="0.0" y="-179.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.5895955838302784" x="261.0" y="281.0" />
+          <SelectedNodes>
+            <node>fr.bomberman.game.Main</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/Bomb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="264" selection-start-line="264" selection-end-line="264" />
+          <folding>
+            <element signature="docComment;method#Bomb#0;class#Bomb#0" />
+            <element signature="method#Bomb#0;class#Bomb#0" />
+            <element signature="docComment;method#explosion#0;class#Bomb#0" />
+            <element signature="method#explosion#0;class#Bomb#0" />
+            <element signature="docComment;method#drawExplosion#0;class#Bomb#0" />
+            <element signature="method#drawExplosion#0;class#Bomb#0" />
+            <element signature="docComment;method#drawGrass#0;class#Bomb#0" />
+            <element signature="docComment;method#draw#0;class#Bomb#0" />
+            <element signature="method#draw#0;class#Bomb#0" />
+            <element signature="docComment;method#dropBonus#0;class#Bomb#0" />
+            <element signature="method#dropBonus#0;class#Bomb#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/entity/IA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;method#IA#0;class#IA#0" />
+            <element signature="method#IA#0;class#IA#0" />
+            <element signature="docComment;method#setBombs#0;class#IA#0" />
+            <element signature="docComment;method#move#0;class#IA#0" />
+            <element signature="docComment;method#moveDir#0;class#IA#0" />
+            <element signature="docComment;method#getLifes#0;class#IA#0" />
+            <element signature="e#4045#4046#0" expanded="true" />
+            <element signature="e#4073#4074#0" expanded="true" />
+            <element signature="docComment;method#dead#0;class#IA#0" />
+            <element signature="e#4145#4146#0" expanded="true" />
+            <element signature="e#4173#4174#0" expanded="true" />
+            <element signature="docComment;method#play#0;class#IA#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fr/bomberman/game/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+          <folding>
+            <element signature="docComment;method#createUI#0;class#Main#0" />
+            <element signature="method#createUI#0;class#Main#0" />
+            <element signature="docComment;method#loadSprites#0;class#Main#0" />
+            <element signature="docComment;method#playMusic#0;class#Main#0" />
+            <element signature="method#playMusic#0;class#Main#0" />
+            <element signature="docComment;method#createGame#0;class#Main#0" />
+            <element signature="docComment;method#createScenes#0;class#Main#0" />
+            <element signature="docComment;method#start#0;class#Main#0" />
           </folding>
         </state>
       </provider>
@@ -960,7 +1263,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1017,6 +1319,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>lib1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

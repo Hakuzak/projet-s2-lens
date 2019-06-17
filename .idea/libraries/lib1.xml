@@ -1,26 +1,16 @@
 <component name="libraryTable">
   <library name="lib1">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" />
       <root url="file://$USER_HOME$/Downloads/javafx-sdk-12.0.1/lib" />
     </CLASSES>
     <JAVADOC />
     <NATIVE>
-      <root url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" />
+      <root url="file://$USER_HOME$/Downloads/javafx-sdk-12.0.1/lib" />
     </NATIVE>
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" />
-<<<<<<< HEAD
       <root url="file://$USER_HOME$/Downloads/javafx-sdk-12.0.1/lib" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/Downloads/javafx-sdk-12.0.1/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" recursive="false" type="SOURCES" />
     <jarDirectory url="file://$USER_HOME$/Downloads/javafx-sdk-12.0.1/lib" recursive="false" type="SOURCES" />
-=======
-    </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../../javafx-sdk-12.0.1/lib" recursive="false" type="SOURCES" />
->>>>>>> parent of 49f9b06...  coucou
   </library>
 </component>

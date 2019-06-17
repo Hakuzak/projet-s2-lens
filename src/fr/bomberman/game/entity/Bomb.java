@@ -54,8 +54,7 @@ public class Bomb extends Entity {
 
             if (getBoard().getByCoords(xup, yup) != null && getBoard().getByCoords(xup, yup).getType() != TileType.WALL) {
                 if (getBoard().getByCoords(xup, yup2) != null && getBoard().getByCoords(xup, yup2).getType() != TileType.WALL && getBoard().getByCoords(xup, yup).getType() == TileType.GRASS) {
-                    draw(xup, yup2, e);
-//                    dropBonus(xup, yup2);
+                    draw(xup, yup2);
 
                     // Si c'est le joueur qui pose une bmmbe
                     if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xup && e.getSprite().getY() == yup2) {
@@ -71,9 +70,8 @@ public class Bomb extends Entity {
                     }
                 }
 
-                draw(tile.getX(), tile.getY(), e);
-                draw(xup, yup, e);
-//                dropBonus(xup, yup);
+                draw(tile.getX(), tile.getY());
+                draw(xup, yup);
 
                 // Si c'est le joueur qui pose une bmmbe
                 if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xup && e.getSprite().getY() == yup) {
@@ -92,8 +90,7 @@ public class Bomb extends Entity {
 
             if (getBoard().getByCoords(xdown, ydown) != null && getBoard().getByCoords(xdown, ydown).getType() != TileType.WALL) {
                 if (getBoard().getByCoords(xdown, ydown2) != null && getBoard().getByCoords(xdown, ydown2).getType() != TileType.WALL && getBoard().getByCoords(xdown, ydown).getType() == TileType.GRASS) {
-                    draw(xdown, ydown2, e);
-//                    dropBonus(xdown, ydown2);
+                    draw(xdown, ydown2);
 
                     // Si c'est le joueur qui pose une bmmbe
                     if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xdown && e.getSprite().getY() == ydown2) {
@@ -109,9 +106,8 @@ public class Bomb extends Entity {
                     }
                 }
 
-                draw(tile.getX(), tile.getY(), e);
-                draw(xdown, ydown, e);
-//                dropBonus(xdown, ydown);
+                draw(tile.getX(), tile.getY());
+                draw(xdown, ydown);
 
                 // Si c'est le joueur qui pose une bmmbe
                 if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xdown && e.getSprite().getY() == ydown) {
@@ -130,8 +126,7 @@ public class Bomb extends Entity {
 
             if (getBoard().getByCoords(xleft, yleft) != null && getBoard().getByCoords(xleft, yleft).getType() != TileType.WALL) {
                 if (getBoard().getByCoords(xleft2, yleft) != null && getBoard().getByCoords(xleft2, yleft).getType() != TileType.WALL && getBoard().getByCoords(xleft, yleft).getType() == TileType.GRASS) {
-                    draw(xleft2, yleft, e);
-//                    dropBonus(xleft2, yleft);
+                    draw(xleft2, yleft);
 
                     // Si c'est le joueur qui pose une bmmbe
                     if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xleft2 && e.getSprite().getY() == yleft) {
@@ -147,9 +142,8 @@ public class Bomb extends Entity {
                     }
                 }
 
-                draw(tile.getX(), tile.getY(), e);
-                draw(xleft, yleft, e);
-//                dropBonus(xleft, yleft);
+                draw(tile.getX(), tile.getY());
+                draw(xleft, yleft);
 
                 // Si c'est le joueur qui pose une bmmbe
                 if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xleft && e.getSprite().getY() == yleft) {
@@ -168,8 +162,7 @@ public class Bomb extends Entity {
 
             if (getBoard().getByCoords(xright, yright) != null && getBoard().getByCoords(xright, yright).getType() != TileType.WALL) {
                 if (getBoard().getByCoords(xright2, yright) != null && getBoard().getByCoords(xright2, yright).getType() != TileType.WALL && getBoard().getByCoords(xright, yright).getType() == TileType.GRASS) {
-                    draw(xright2, yright, e);
-//                    dropBonus(xright2, yright);
+                    draw(xright2, yright);
 
                     // Si c'est le joueur qui pose une bmmbe
                     if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xright2 && e.getSprite().getY() == yright) {
@@ -185,9 +178,8 @@ public class Bomb extends Entity {
                     }
                 }
 
-                draw(tile.getX(), tile.getY(), e);
-                draw(xright, yright, e);
-//                dropBonus(xright, yright);
+                draw(tile.getX(), tile.getY());
+                draw(xright, yright);
 
                 // Si c'est le joueur qui pose une bmmbe
                 if (e.getClass().getSimpleName().equals("Player") && e.getSprite().getX() == xright && e.getSprite().getY() == yright) {
@@ -241,7 +233,7 @@ public class Bomb extends Entity {
      * @param x La position en x
      * @param y La position en y
      */
-    private void draw(int x, int y, Player e) {
+    private void draw(int x, int y) {
         Tile newTile = getBoard().getByCoords(x, y);
         newTile.getSprite().setImage(getSpriteManager().get("grass"));
         newTile.setType(TileType.GRASS);
@@ -249,12 +241,18 @@ public class Bomb extends Entity {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, event -> drawExplosion(x, y)),
                 new KeyFrame(Duration.seconds(1), event -> drawGrass(x, y)),
-                new KeyFrame(Duration.seconds(1), event -> dropBonus(x, y, e))
+                new KeyFrame(Duration.seconds(1), event -> dropBonus(x, y))
         );
         timeline.play();
     }
 
-    private void dropBonus(int x, int y, Player e) {
+
+    /**
+     * Affiche un bonus aléatoirement
+     * @param x La position en x de la tuile
+     * @param y La position en y de la tuile
+     */
+    private void dropBonus(int x, int y) {
         int haveBonus = ThreadLocalRandom.current().nextInt(1, 11);
         if (haveBonus == 1) {
             getGraphicsContext().drawImage(getSpriteManager().get("bombBonus"), x, y);
